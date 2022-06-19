@@ -1,0 +1,39 @@
+﻿@model MyProject.Models.Sinif.Slider
+@{
+    ViewBag.Title = "AdminSGetir";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Slider Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("AdminSGuncelle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div id="div-boyut">
+
+        <div>
+            <label><b>Başlık</b></label>
+            @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+        </div>
+        <div>
+            <label><b>Kisa Yazı</b></label>
+            @Html.TextAreaFor(x => x.KisaYazi, 2, 0, new { @class = "form-control" })
+        </div>
+        <div>
+            <label><b>Resim</b></label>
+            @*<input type="text" name="Resim" placeholder="Url Giriniz" class="form-control" />*@
+
+            <input type="file" name="Resim" />
+        </div>
+
+        <div>
+            @Html.HiddenFor(x => x.id)
+        </div>
+        <div>
+            <button class="button border with-icon">Değişiklikleri Kaydet</button>
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+}

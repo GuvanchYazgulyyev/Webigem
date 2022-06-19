@@ -1,0 +1,25 @@
+﻿@using MyProject.Models.Sinif
+@model List<YapilanPSayisi> 
+@{
+    ViewBag.Title = "AdmtopYapilanp";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h3>Yapılan Projelr (Sayıları Ana Sayfa)</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Başlık</th>
+            <th>Sayı</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Baslik</td>
+                <td>@x.sayi</td>
+                <td><a href="~/Admin/AdmYapProjeGetr/@x.id" class="button border with-icon">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+</div>

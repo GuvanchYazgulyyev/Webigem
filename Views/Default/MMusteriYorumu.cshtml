@@ -1,0 +1,20 @@
+﻿@using MyProject.Models.Sinif
+@model List<MutluMusYorumu>
+
+
+
+
+
+@foreach (var x in Model)
+{
+    <div class="client-item">
+        <div class="client-item-img">
+            <img src="@x.Resim" alt="Testimonial Images">
+        </div>
+        <h3>@x.BaslikAd</h3>
+        <p>
+            @x.icerik
+        </p>
+    </div>
+}
+

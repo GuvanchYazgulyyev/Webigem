@@ -1,0 +1,32 @@
+﻿@using MyProject.Models.Sinif
+@model List<WebSiteTanitma>
+@{
+    ViewBag.Title = "AdmWebSiTanitma";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h3>Web Site Tanıtma Yazısı (Ana Sayfa Kategorilerin Altında)</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Başlık</th>
+            <th>Resim</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.id</td>
+                <td>@x.Baslik</td>
+                <td><img src="@x.Resim" width="100px" ; alt="Alternate Text" /></td>
+                <td><a href="~/Admin/AdmWebSiTanitmaSil/@x.id" onclick="return confirm('Bunu Silmek İstediginizden Emin misin? @x.Baslik')" class="button border with-icon" style="background-color:#ff0000; color:#fff">Sil</a></td>
+                <td><a href="~/Admin/AdmWebSGetir/@x.id" class="button border with-icon">Güncelle (Detaylı Gör)</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Admin/AdmWebSiTanitmaEkle/" class="button border with-icon">Ekleme Yap</a>
+
+
+</div>

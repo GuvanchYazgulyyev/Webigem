@@ -1,0 +1,42 @@
+﻿@model MyProject.Models.Sinif.iletisimMesaj
+@{
+    ViewBag.Title = "AdmMesjGetr";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>İletişim Mesaj Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("AdmMesjGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+
+        <div>
+            <label><b>Ad Soyad</b></label>
+            @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+        </div>
+        <div>
+            <label><b>E-Posta</b></label>
+            @Html.TextBoxFor(x => x.EPosta, new { @class = "form-control" })
+        </div>
+
+        <div>
+            <label><b>Konu</b></label>
+            @Html.TextBoxFor(x => x.Konu, new { @class = "form-control" })
+        </div>
+        <div>
+            <label><b>Mesaj</b></label>
+            @Html.TextAreaFor(x => x.Mesaj, 3, 0, new { @class = "form-control" })
+        </div>
+
+        <div>
+            @Html.HiddenFor(x => x.id)
+        </div>
+        <div>
+            <button class="button border with-icon">Değişiklikleri Kaydet</button>
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+}

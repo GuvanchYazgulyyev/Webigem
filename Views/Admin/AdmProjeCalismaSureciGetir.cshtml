@@ -1,0 +1,39 @@
+﻿@model MyProject.Models.Sinif.ProjeilerlemeSureci
+@{
+    ViewBag.Title = "AdmProjeCalismaSureciGetir";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h2>Proje CalismaSureci Güncelle</h2>
+
+@using (Html.BeginForm("AdmProjeCalismaSureciGuncelle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div id="div-boyut">
+
+        <div>
+            <label><b>Başlık</b></label>
+            @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+        </div>
+        <div>
+            <label><b>Alt Başlık</b></label>
+            @Html.TextAreaFor(x => x.AltBaslik, 4, 0, new { @class = "form-control" })
+        </div>
+
+        <div>
+            <label><b>Sıra</b></label>
+            @Html.TextAreaFor(x => x.Sayi, 3, 0, new { @class = "form-control", @type="number" })
+        </div>
+       
+        <div>
+            @Html.HiddenFor(x => x.id)
+        </div>
+        <div>
+            <button class="button border with-icon">Değişiklikleri Kaydet</button>
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+}
+

@@ -1,0 +1,33 @@
+﻿@using MyProject.Models.Sinif
+@model List<Bloglar>
+@using MyProject.App_Code
+
+
+@foreach (var o in Model)
+{
+    <article class="item">
+        <a href="#" class="thumb">
+            <img src="@o.Resim" alt="Alternate Text" />
+        </a>
+        @if (o.Baslik.Length > 60)
+        {
+            <div class="info">
+                <time datetime="2020-06-30">@o.Tarih</time>
+                <h4 class="title usmall">
+                    @Html.ActionLink(o.Baslik.Substring(0, 60), "BlogDetay", new { id = o.id, ara = Seo.AdresDuzenle(o.Baslik) })
+
+                </h4>
+            </div>
+        }
+        else
+        {
+            <div class="info">
+                <time datetime="2020-06-30">@o.Tarih</time>
+                <h4 class="title usmall">
+                    @Html.ActionLink(o.Baslik, "BlogDetay", new { id = o.id, ara = Seo.AdresDuzenle(o.Baslik) })
+
+                </h4>
+            </div>
+        }
+    </article>
+}

@@ -1,0 +1,53 @@
+﻿@model MyProject.Models.Sinif.Takim
+@{
+    ViewBag.Title = "AdmTakGetr";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Porfoil Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("AdmTakGuncel", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div id="div-boyut">
+        <label><b>Ad Soyad</b></label>
+        @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    </div>
+    <div>
+        <label><b>Meslek</b></label>
+        @Html.TextBoxFor(x => x.Meslek, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <label><b>Resim</b> <b> 270X330 Boyutu</b></label>
+        <input type="file" required="" name="Resim" />
+    </div>
+
+    <div>
+        <label><b>Linkedln</b></label>
+        @Html.TextBoxFor(x => x.Face, new { @class = "form-control" })
+    </div>
+
+
+    <div>
+        <label><b>GitHub</b></label>
+        @Html.TextBoxFor(x => x.Tweet, new { @class = "form-control" })
+    </div>
+
+
+    <div>
+        <label><b>İnstagram</b></label>
+        @Html.TextBoxFor(x => x.inst, new { @class = "form-control" })
+    </div>
+
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <div>
+        <button class="button border with-icon">Değişiklikleri Kaydet</button>
+        <br />
+        <br />
+    </div>
+
+
+}
+

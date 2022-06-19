@@ -1,0 +1,29 @@
+﻿@model MyProject.Models.Sinif.Referanslar
+@{
+    ViewBag.Title = "AdmRefEkle";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Referans Ekle</h3>
+
+<div class="col-md-12" id="div-boyut">
+    @ViewBag.Message
+
+    @using (Html.BeginForm("AdmRefEkle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <form method="post">
+
+            <div>
+                <label><b>Resim</b></label>
+                <input type="file" name="Resim" class="form-control" />
+            </div>
+
+
+            <div>
+                <button class="button border with-icon">Yeni Referans Ekle</button>
+            </div>
+            <br />
+        </form>
+    }
+</div>
+

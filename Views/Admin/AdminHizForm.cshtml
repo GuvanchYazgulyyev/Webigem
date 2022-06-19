@@ -1,0 +1,54 @@
+﻿@using MyProject.Models.Sinif
+@model List<HizmetForm>
+@{
+    ViewBag.Title = "AdminHizForm";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+@using (Html.BeginForm("AdminHizForm", "Admin", FormMethod.Post))
+{
+    <div class="col-md-12" style="float:left">
+        <div class="col-md-6">
+            <input type="text" name="p" placeholder="Lütfen Referans Kodunu Giriniz" />
+
+        </div>
+        <div class="col-md-6">
+            <input type="submit" class="button border with-icon" value="Aramaya Başlayın..." />
+
+        </div>
+
+    </div>
+    @*@Html.TextBox("p")*@
+
+}
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h3>Müşteri Talepleri</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Ad Soyad</th>
+            <th>E-Posta</th>
+            <th>Tel No</th>
+            <th>Referans Kod</th>
+            <th>Proje Başlıgı</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.AdSoyad</td>
+                <td>@x.EPosta</td>
+                <td>@x.TelNo</td>
+                <td>@x.TakipKodu</td>
+                <td>@x.ProjeBaslik</td>
+                <td>@Convert.ToDateTime(x.Tarih).ToString("dd/MMM/yyyy")</td>
+                <td><a href="~/Admin/AdminHFormSil/@x.id" onclick="return confirm('Bunu Silmek İstediginizden Emin misin? @x.ProjeBaslik  @x.AdSoyad  @x.TakipKodu  ')" class="button border with-icon" style="background-color:#ff0000; color:#fff">Sil</a></td>
+                <td><a href="~/Admin/AdminHiFormGetir/@x.id" class="button border with-icon">(Detay) </a></td>
+            </tr>
+        }
+    </table>
+
+</div>
+

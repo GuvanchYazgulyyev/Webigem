@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MyProject.Models.Sinif.HakkimizdaYazi>
+
+
+
+@foreach (var x in Model)
+{
+    if (x.Kisaicerik.Length > 134)
+    {
+        <p>
+            @Html.Raw(x.Kisaicerik.Substring(0, 134)) ...
+
+        </p>
+    }
+    else
+    {
+        <p>
+            @Html.Raw(x.Kisaicerik) ...
+
+        </p>
+    }
+
+
+}

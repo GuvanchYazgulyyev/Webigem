@@ -1,0 +1,32 @@
+﻿@model MyProject.Models.Sinif.SSS
+@{
+    ViewBag.Title = "AdminSSSGetr";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Maddeleri Güncelle</h3>
+
+@using (Html.BeginForm("AdminSSSGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <div>
+            <label><b>Başlık</b></label>
+            @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+        </div>
+        <div>
+            <label><b>İçerik</b></label>
+            @Html.TextAreaFor(x => x.icerik, 4, 0, new { @class = "form-control" })
+
+        </div>
+
+        @Html.HiddenFor(x => x.id)
+
+        <div>
+            <button class="button border with-icon">Değişiklikleri Kaydet</button>
+            <br />
+            <br />
+        </div>
+
+    </div>
+}
+

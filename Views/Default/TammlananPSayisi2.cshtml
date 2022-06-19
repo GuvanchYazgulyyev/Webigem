@@ -1,0 +1,14 @@
+﻿@model IEnumerable<MyProject.Models.Sinif.YapilanPSayisi>
+
+
+
+@foreach (var x in Model)
+{
+    <div class="col-lg-3 col-sm-6 col-md-4">
+        <div class="single-counter">
+            <h3 class="color-black"><span class="counter">@x.sayi</span></h3>
+            <p class="color-black font-size">@x.Baslik</p>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,29 @@
+﻿@model MyProject.Models.Sinif.Referanslar
+@{
+    ViewBag.Title = "AdmRefGetr";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Referans Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("AdmRefGuncelle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <label><b>Resim</b></label>
+        <input type="file" name="Resim" />
+    </div>
+
+
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <div>
+        <button class="button border with-icon">Değişiklikleri Kaydet</button>
+        <br />
+        <br />
+    </div>
+
+
+}
+
+

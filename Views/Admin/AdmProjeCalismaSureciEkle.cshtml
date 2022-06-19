@@ -1,0 +1,37 @@
+﻿@model MyProject.Models.Sinif.ProjeilerlemeSureci
+@{
+    ViewBag.Title = "AdmProjeCalismaSureciEkle";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+
+
+<h3>Yeni Ekleme Yap</h3>
+
+
+<div class="col-md-12" id="div-boyut">
+    @using (Html.BeginForm("AdmProjeCalismaSureciEkle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    <form method="post">
+        <div>
+            <label><b>Baslik</b></label>
+            <input type="text" name="Baslik" maxlength="90" placeholder="Başlıkı Giriniz..." class="form-control" />
+        </div>
+        <div>
+            <label><b>Alt Başlık</b></label>
+            <textarea name="AltBaslik" cols="40" rows="2" placeholder="Kısa İçerik Yazınız..." class="form-control"></textarea>
+        </div>
+        <div>
+            <label><b>Sıra</b></label>
+            <input type="number" name="Sayi" placeholder="Sıra Giriniz..." class="form-control" />
+        </div>
+
+        @Html.HiddenFor(x => x.id)
+
+        <div>
+            <button class="button border with-icon"> Ekle</button>
+        </div>
+        <br />
+    </form>
+    }
+</div>

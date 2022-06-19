@@ -1,0 +1,35 @@
+﻿@model MyProject.Models.Sinif.MutluMusYorumu
+@{
+    ViewBag.Title = "AdmMutMusEkle";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Yeni Müşteri Yorum Ekle</h3>
+
+
+<div class="col-md-12" id="div-boyut">
+    @using (Html.BeginForm("AdmMutMusEkle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    <form method="post">
+        <div>
+            <label><b>Ad Soyad</b></label>
+            <input type="text" name="BaslikAd" maxlength="90" placeholder="Ad Soyad Giriniz..." class="form-control" />
+        </div>
+        <div>
+            <label><b>İçerik</b></label>
+            <textarea name="icerik" cols="40" rows="3" required="" placeholder="İçerik Yazınız..." class="form-control"></textarea>
+        </div>
+        <div>
+            <label><b>Resim</b> Resim Boyuru <b> 90 x 90 </b> Olmalıdır! </label>
+            <input type="file" id="Resim" name="Resim" accept=".jpg,.JPG,.PNG,.png,.jpeg,.JPEG" class="form-control" />
+        </div>
+        @Html.HiddenFor(x => x.id)
+
+        <div>
+            <button class="button border with-icon">Yeni Yorum Ekle</button>
+        </div>
+        <br />
+    </form>
+    }
+    </div>
+

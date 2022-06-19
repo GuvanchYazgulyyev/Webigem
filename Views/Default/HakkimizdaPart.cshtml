@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MyProject.Models.Sinif.HakkimizdaYazi>
+
+@foreach (var x in Model)
+{
+    if (x.id == 1)
+    {
+        <h5>
+            @x.Baslik <a href="/Default/Hakkimizda">Detay</a>
+        </h5>
+        <br />
+    }
+}

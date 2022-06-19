@@ -1,0 +1,44 @@
+﻿@model MyProject.Models.Sinif.HakkimizdaYazi
+@{
+    ViewBag.Title = "AdminHakGetir";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Hakkımda Yazı Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("AdminHakguncelle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div id="div-boyut">
+        <label><b>Başlık</b></label>
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    </div>
+    <div>
+        <label><b>Kısa açıklama</b></label>
+        @Html.TextBoxFor(x => x.Kisaicerik, new { @class = "form-control" })
+    </div>
+    <div>
+        <label><b>Alt Parametre Başlıkı</b></label>
+        @Html.TextBoxFor(x => x.HakkimizdaAltParametreBaslik, new { @class = "form-control" })
+    </div>
+    <div>
+        <label><b>Alt Parametre İçerik</b></label>
+        @Html.TextBoxFor(x => x.HakkimizdaAltParametreicerik, new { @class = "form-control" })
+    </div>
+    <div>
+        <label><b>Sıra No</b></label>
+        @Html.TextBoxFor(x => x.HakkimizdaAltParametreSiraNo, new { @class = "form-control" })
+    </div>
+
+
+
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <div>
+        <button class="button border with-icon">Değişiklikleri Kaydet</button>
+        <br />
+        <br />
+    </div>
+
+
+}

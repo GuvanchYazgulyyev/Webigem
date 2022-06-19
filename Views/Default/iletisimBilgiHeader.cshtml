@@ -1,0 +1,32 @@
+﻿@using MyProject.Models.Sinif
+@model List<SiteiletisimBilgi>
+
+
+@foreach (var x in Model)
+{
+    if (x.Tel == x.Tel)
+    {
+
+        <li><a href="tel:+90 552 848 16 09"><i class="flaticon-call"></i> +90 552 848 16 09</a></li>
+
+    }
+    if (x.EPosta == x.EPosta)
+    { <li>
+            <a href="mailto:@x.EPosta">
+                <i class="flaticon-paper-plane"></i>
+                <span class="__cf_email__" >@x.EPosta</span>
+            </a>
+
+
+        </li>
+    }
+
+    if (x.Baslik == x.Baslik)
+    {
+        <li><a href="#"><i class='flaticon-pin'></i>@x.Baslik</a></li>
+
+    }
+
+}
+
+

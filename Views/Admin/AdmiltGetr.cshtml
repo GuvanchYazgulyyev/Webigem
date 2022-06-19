@@ -1,0 +1,55 @@
+﻿@model MyProject.Models.Sinif.SiteiletisimBilgi
+@{
+    ViewBag.Title = "AdmiltGetr";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>İletişim Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("AdmiltGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+
+        <div>
+            <label><b>Başlık</b></label>
+            @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+        </div>
+        <div>
+            <label><b>E-Posta</b></label>
+            @Html.TextBoxFor(x => x.EPosta, new { @class = "form-control" })
+        </div>
+
+        <div>
+            <label><b>Tel No: (Boşlu Bırakmadan Yazın)</b></label>
+            @Html.TextBoxFor(x => x.Tel, new { @class = "form-control" })
+        </div>
+        <div>
+            <label><b>Facebook</b></label>
+            @Html.TextBoxFor(x => x.Face, new { @class = "form-control" })
+        </div>
+        <div>
+            <label><b>İnstagram</b></label>
+            @Html.TextBoxFor(x => x.inst, new { @class = "form-control" })
+        </div>
+
+        <div>
+            <label><b>Twitter</b></label>
+            @Html.TextBoxFor(x => x.tweet, new { @class = "form-control" })
+        </div>
+        <div>
+            <label><b>Linkedn</b></label>
+            @Html.TextBoxFor(x => x.Likdl, new { @class = "form-control" })
+        </div>
+        <div>
+            @Html.HiddenFor(x => x.id)
+        </div>
+        <div>
+            <button class="button border with-icon">Değişiklikleri Kaydet</button>
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+}
+

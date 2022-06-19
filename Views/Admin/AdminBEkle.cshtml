@@ -1,0 +1,93 @@
+﻿@model MyProject.Models.Sinif.Bloglar
+@{
+    ViewBag.Title = "AdminBEkle";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h2>Blog Ekle</h2>
+<div class="col-md-12">
+    @using (Html.BeginForm("AdminBEkle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <form class="form-group" method="post" enctype="multipart/form-data">
+            <br />
+            Blog Başlıgı
+            @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+
+            <br />
+            İçerik
+            <textarea name="icerik" cols="40" rows="5" required="" id="summernote" class="form-control"></textarea>
+            Görsel
+            <input type="file" id="File" name="File" accept=".jpg,.JPG,.PNG,.png,.jpeg,.JPEG" class="form-control" />
+
+            @*<input type="file" name="Resim" />*@
+            <br />
+
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+
+            <script>
+                $('#summernote').summernote({
+                    placeholder: 'Özel Notunuzu Buraya Giriniz! Örnk:"Daha Fazla Özellik"',
+                    tabsize: 2,
+                    height: 298,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture', 'video']],
+                        ['view', ['fullscreen', 'codeview', 'help']]
+                    ]
+                });
+            </script>
+
+
+            <br />
+            Alıntı
+            <textarea name="Alinti" cols="40" rows="3" id="summernote2" class="form-control"></textarea>
+
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+
+            <script>
+                $('#summernote2').summernote({
+                    placeholder: 'Özel Notunuzu Buraya Giriniz! Örnk:"Daha Fazla Özellik"',
+                    tabsize: 2,
+                    height: 140,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture', 'video']],
+                        ['view', ['fullscreen', 'codeview', 'help']]
+                    ]
+                });
+            </script>
+            @*<br />
+                İçerik 2
+                <textarea name="icerik2" cols="40" rows="5"  class="form-control"></textarea>*@
+
+            <br />
+
+            Tarih
+            @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", required = "" })
+            <br />
+
+
+            @*Durum
+                @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })*@
+            @Html.HiddenFor(x => x.id)
+            <br />
+            <button class="button border with-icon">Yeni Blog Ekle</button>
+
+        </form>
+    }
+</div>
+

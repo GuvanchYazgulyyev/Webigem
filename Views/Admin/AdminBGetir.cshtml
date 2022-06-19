@@ -1,0 +1,98 @@
+﻿@model MyProject.Models.Sinif.Bloglar
+@{
+    ViewBag.Title = "AdminBGetir";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Blog Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("UrunGuncelle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div id="div-boyut">
+        <label><b>Blog Başlıgı</b></label>
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    </div>
+    <div>
+        <label><b>Resim</b></label>
+        @*<input type="text" name="Resim" placeholder="Url Giriniz" class="form-control" />*@
+
+        <input type="file" name="Resim" />
+    </div>
+    <div>
+        <label><b>İçerik</b></label>
+        @Html.TextAreaFor(x => x.icerik, 4, 0, new { @class = "form-control", id = "summernote" })
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Özel Notunuzu Buraya Giriniz! Örnk:"Daha Fazla Özellik"',
+            tabsize: 2,
+            height: 298,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    </script>
+    <div>
+        <label><b>Alıntı</b></label>
+        @Html.TextAreaFor(x => x.Alinti, 3, 0, new { @class = "form-control", id = "summernote2" })
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+
+    <script>
+        $('#summernote2').summernote({
+            placeholder: 'Özel Notunuzu Buraya Giriniz! Örnk:"Daha Fazla Özellik"',
+            tabsize: 2,
+            height: 298,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    </script>
+
+    @*<div>
+            <label><b>İçerik 2</b></label>
+            @Html.TextAreaFor(x => x.icerik2, 4, 0, new { @class = "form-control" })
+        </div>*@
+
+    <div>
+        <label><b>Tarih</b></label>
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    </div>
+
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <div>
+        <button class="button border with-icon">Değişiklikleri Kaydet</button>
+        <br />
+        <br />
+    </div>
+
+
+}
+
+

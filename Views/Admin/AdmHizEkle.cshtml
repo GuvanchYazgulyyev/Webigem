@@ -1,0 +1,69 @@
+﻿@model MyProject.Models.Sinif.Hizmetler
+@{
+    ViewBag.Title = "AdmHizEkle";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h2>Hizmet Ekle</h2>
+<div class="col-md-12">
+    @using (Html.BeginForm("AdmHizEkle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    <form class="form-group" method="post">
+        <br />
+        İkon Resim
+        @*<input type="text" name="iconResim" placeholder="Url Giriniz" class="form-control" />*@
+
+        <input type="file" name="iconResim" />
+
+        <br />
+        Hizmet Ad
+        @Html.TextBoxFor(x => x.HizmetAd, new { @class = "form-control" })
+        <br />
+        Kısa Yazı <b>Burası Önemli Hizmet hakkında tek cümle giriniz! Ana Sayfada Alt başlık Olarak Gelecektir!</b>
+        <textarea name="KisaYazi" cols="40" rows="3" maxlength="500" required="" class="form-control"></textarea>
+        <br />
+        Resim
+        <input type="file" name="Resim2" />
+        <br />
+        Header Resim
+        <input type="file" name="HeaderResim" />
+        <br />
+
+        İçerik 
+        <textarea name="icerik1" cols="40" rows="3" maxlength="1000" required="" id="summernote" class="form-control"></textarea>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+
+        <script>
+            $('#summernote').summernote({
+                placeholder: 'Özel Notunuzu Buraya Giriniz! Örnk:"Daha Fazla Özellik"',
+                tabsize: 2,
+                height: 298,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+        </script>
+
+
+        @*Video
+        <input type="file" name="Video" />*@
+
+
+        @Html.HiddenFor(x => x.id)
+        <br />
+        <button class="button border with-icon">Yeni Hizmet Ekle</button>
+
+    </form>
+    }
+</div>
+

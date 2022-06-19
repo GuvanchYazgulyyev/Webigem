@@ -1,0 +1,20 @@
+﻿@using MyProject.Models.Sinif
+@model List<ProjeilerlemeSureci>
+
+
+
+
+@foreach (var x in Model)
+{
+    <li class="accordion-item">
+        <a class="accordion-title" href="javascript:void(0)">
+            <i class='bx bx-chevron-down'></i>
+            @x.Sayi @x.Baslik
+        </a> 
+        <div class="accordion-content">
+            <p>
+                @x.AltBaslik
+            </p>
+        </div>
+    </li>
+}

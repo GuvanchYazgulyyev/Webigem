@@ -1,0 +1,171 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <title>Admin Panel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="~/Resimler/webigembeyazlogo.png">
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/AdminPanel/css/style.css">
+    <link rel="stylesheet" href="~/AdminPanel/css/main-color.css" id="colors">
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header Container
+        ================================================== -->
+        <header id="header-container" class="fixed fullwidth dashboard">
+
+            <!-- Header -->
+            <div id="header" class="not-sticky">
+                <div class="container">
+
+                    <!-- Left Side Content -->
+                    <div class="left-side">
+
+                        <!-- Logo -->
+                        <div id="logo">
+                            <a href="/"><img src="~/Resimler/WEBİGEM.png" alt=""></a>
+                            <a href="/" class="dashboard-logo"><img src="~/Resimler/webigembeyazlogo.png" alt=""></a>
+                        </div>
+
+                        <!-- Mobile Navigation -->
+                        <div class="mmenu-trigger">
+                            <button class="hamburger hamburger--collapse" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!-- Main Navigation / End -->
+
+                    </div>
+                    <!-- Left Side Content / End -->
+                    <!-- Right Side Content / End -->
+                    <div class="right-side">
+                        <!-- Header Widget -->
+                        <div class="header-widget">
+
+                           
+                        </div>
+                        <!-- Header Widget / End -->
+                    </div>
+                    <!-- Right Side Content / End -->
+
+                </div>
+            </div>
+            <!-- Header / End -->
+
+        </header>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+        <!-- Dashboard -->
+        <div id="dashboard">
+
+            <!-- Navigation
+
+            ================================================== -->
+            <!-- Responsive Navigation Trigger -->
+            <a href="#" class="dashboard-responsive-nav-trigger"><i class="fa fa-reorder"></i> Pano Navigasyonu</a>
+
+            <div class="dashboard-nav">
+                <div class="dashboard-nav-inner">
+                    <ul data-submenu-title="">
+                        <li class="active"><a href="~/Admin/AdminIndex"><i class="sl sl-icon-home"></i> Gösterge Paneli</a></li>
+                        <li><a href="~/Admin/AdminPaket"><i class="sl sl-icon-magic-wand"></i> Paketler</a></li>
+                        <li><a href="~/Admin/AdmHizmetler"><i class="sl sl-icon-list"></i> Hizmetler</a></li>
+                        @*<li><a href="~/Admin/AdminHizFormNot"><i class="sl sl-icon-list"></i> Müşteri Talebi</a></li>*@
+                        <li>
+                            <a><i class="sl sl-icon-layers"></i>Ana Sayfa Yazıları</a>
+                            <ul>
+                                <li><a href="~/Admin/AdmWebSiTanitma">Web Site Tanıtma (Ana Sayfa Kategorilerin Altında)</a></li>
+                                <li><a href="~/Admin/AdmtopYapilanp">Yapılan Proje Sayısı</a></li>
+                                <li><a href="~/Admin/AdminNedenBiz">Neden Biz Yazısı</a></li>
+                                <li><a href="~/Admin/AdminSlider">Slider Yazı Resim Detayı</a></li>
+                                <li><a href="~/Admin/AdmMutMusYorum">Mutlu Müşteri Yorumu</a></li>
+                                <li><a href="~/Admin/AdmReferans">Referanslar</a></li>
+                                <li><a href="~/Admin/AdmProjeCalismaSureci">Ana Sayfa Proje Çalışma Süresi</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="~/Admin/AdiminHakYazi"><i class="sl sl-icon-badge"></i> Hakkımda Yazı</a></li>
+
+                        @*<li><a href="~/Admin/MusteriKaydi"><i class="sl sl-icon-screen-desktop"></i> Müşteri Kaydı</a></li>*@
+                    
+                            <li><a href="~/Admin/AdminHizForm"><i class="sl sl-icon-envolope-letter"></i> Müşteri Talep Formu (Admin Yetkili)</a></li>
+                    
+                        @*<li><a href="~/Admin/AdminNedenBiz"><i class="sl sl-icon-graduation"></i> Neden Biz Yazısı</a></li>*@
+                        <li><a href="~/Admin/AdminPortfoil"><i class="sl sl-icon-social-dropbox"></i> Projeler</a></li>
+
+                        <li><a href="~/Admin/AdmiletsmBilgi"><i class="sl sl-icon-call-in"></i>İletişim</a></li>
+                        <li><a href="~/Admin/AdmTakim"><i class="sl sl-icon-size-fullscreen"></i>Takım</a></li>
+
+                        <li><a href="#"><i class="sl sl-icon-envelope-open"></i> Mesajlar ve Talepler</a>
+                            <ul>
+                                <li><a href="~/Admin/AdmiletsmGMesaj">Mesajlar</a></li>
+                                <li><a href="~/Admin/AdminHizFormNot">Gelen Talepler</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="~/Admin/AdminKVKK"><i class="sl sl-icon-envelope-open"></i>Gizlilik KVKK</a></li>
+                        <li><a href="~/Admin/AdminBlog"><i class="sl sl-icon-docs"></i>Bloglar</a></li>
+                        @*@if (User.IsInRole("Admin"))
+                        {*@
+                            <li>
+                                <a><i class="sl sl-icon-user-follow"></i>Kullancılar</a>
+                                <ul>
+                                    <li><a href="~/Admin/Adminkullanici">Kullanıcı Listesi</a></li>
+                                    <li><a href="~/Admin/AdminKulEkle">Yeni Kullanıcı</a></li>
+                                </ul>
+                            </li>
+                        }
+                        <li><a href="~/Admin/AdminSSS"><i class="sl sl-icon-question"></i> Sık Sorulan Sorular</a></li>
+                        <li><a href="~/Admin/LogOut"><i class="sl sl-icon-logout"></i> Çıkış</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="dashboard-content">
+                @RenderBody()
+                <div class="row">
+                    <!-- Copyrights -->
+                    <div class="col-md-12">
+                        <div class="copyrights">© 2021 Webigem.Tüm Hakları Saklıdır.</div>
+                    </div>
+                </div>
+                <!-- Content / End -->
+            </div>
+            <!-- Dashboard / End -->
+        </div>
+
+    </div>
+    <!-- Wrapper / End -->
+    <!-- Scripts
+    ================================================== -->
+    <script type="text/javascript" src="~/AdminPanel/scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/scripts/jquery-migrate-3.1.0.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/scripts/mmenu.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/scripts/chosen.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/scripts/slick.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/scripts/rangeslider.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/scripts/magnific-popup.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/scripts/waypoints.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/scripts/counterup.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/scripts/tooltips.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/scripts/custom.js"></script>
+
+
+</body>
+</html>

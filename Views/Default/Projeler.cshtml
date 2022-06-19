@@ -1,0 +1,86 @@
+﻿@model IEnumerable<MyProject.Models.Sinif.Projeler>
+@{
+    ViewBag.Title = "Projeler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!doctype html>
+<html lang="zxx">
+
+
+<body>
+
+    
+
+
+    <div class="inner-banner inner-bg7">
+        <div class="container">
+            <div class="inner-title text-center">
+                <h3>Projelerimiz</h3>
+                <ul>
+                    <li>
+                        <a href="/">Ana Sayfa</a>
+                    </li>
+                    <li>
+                        <i class='bx bxs-chevrons-right'></i>
+                    </li>
+                    <li>Projelerimiz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="portfolio-area pt-100 pb-70">
+        <div class="container">
+            <div class="section-title text-center">
+                <span>Portföyümüz</span>
+                <h2>
+                    Onlarca Firmayla İş Yaptık
+                </h2>
+                <p>
+                    Müşteri memnuniyetini en önemli ilkemiz olarak benimseyerek çalışma yaptığımız müşteriler 
+                    ile geliştirme, bakım ve destek süreçlerinde
+                    güven ve memnuniyet ilişkisini sürdürerek kalitemizden taviz vermiyoruz.
+                </p>
+            </div>
+            <div class="row pt-45">
+                @foreach (var x in Model)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">
+                                <a href="@x.icerik" target="_blank">
+                                    <img src="@x.Resim" alt="Portfolio Resim">
+                                </a>
+                                <div class="portfolio-tag">
+                                    <a href="@x.icerik" target="_blank"><span>@x.ProjeTip</span></a>
+                                </div>
+                                <div class="portfolio-content">
+                                    <a href="@x.icerik" target="_blank"><h3>@x.Baslik</h3></a>
+                                    <i class='bx bxs-chevron-right'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+    
+
+
+   
+</body>
+
+</html>

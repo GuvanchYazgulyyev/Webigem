@@ -1,0 +1,38 @@
+﻿@using MyProject.Models.Sinif
+@model List<Projeler> 
+@{
+    ViewBag.Title = "AdminPortfoil";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h3>Porfoil</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Başlık</th>
+            <th>URL</th>
+            <th>Resim</th>
+            <th>Proje Tipi</th>
+          
+            
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Baslik</td>
+                <td>@x.icerik</td>
+                <td><img src="@x.Resim"  width="90px" /></td>
+       
+                <td>@x.ProjeTip</td>
+                <td>@x.Tarih</td>
+                <td><a href="~/Admin/AdmPortSil/@x.id" onclick="return confirm('Bunu Silmek İstediginizden Emin misin? @x.Baslik')" class="button border with-icon" style="background-color:#ff0000; color:#fff">Sil</a></td>
+                <td><a href="~/Admin/AdmPortGetr/@x.id" class="button border with-icon">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Admin/AdmPortEkle/" class="button border with-icon">Yeni Portfoil Ekle</a>
+
+</div>

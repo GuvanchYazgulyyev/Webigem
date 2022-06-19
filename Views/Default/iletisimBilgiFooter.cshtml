@@ -1,0 +1,31 @@
+﻿@using MyProject.Models.Sinif
+@model List<SiteiletisimBilgi>
+
+
+@foreach (var x in Model)
+{
+    if (x.Tel == x.Tel)
+    {
+
+        <li>
+            <i class='bx bxs-chevron-right'></i>
+            <a href="tel:+90 552 848 16 09">+90 552 848 16 09</a>
+        </li>
+    }
+    if (x.EPosta == x.EPosta)
+    {
+        <li>
+            <i class='bx bxs-chevron-right'></i>
+            <a href="mailto:@x.EPosta"><span class="__cf_email__">@x.EPosta</span></a>
+        </li>
+    }
+
+    if (x.Baslik == x.Baslik)
+    {
+        <li>
+            <i class='bx bxs-chevron-right'></i>
+            @x.Baslik
+        </li>
+    }
+
+}

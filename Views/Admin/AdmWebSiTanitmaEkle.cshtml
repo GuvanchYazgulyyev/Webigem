@@ -1,0 +1,39 @@
+﻿@model MyProject.Models.Sinif.WebSiteTanitma
+@{
+    ViewBag.Title = "AdmWebSiTanitmaEkle";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Yeni Tanıtım Ekle</h3>
+
+
+<div class="col-md-12" id="div-boyut">
+    @using (Html.BeginForm("AdmWebSiTanitmaEkle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <form method="post">
+            <div>
+                <label><b>Baslik</b></label>
+                <input type="text" name="Baslik" maxlength="90" placeholder="Başlıkı Giriniz..." class="form-control" />
+            </div>
+            <div>
+                <label><b>İçerik</b></label>
+                <textarea name="UzunYazi" cols="40" rows="3"  placeholder="Kısa İçerik Yazınız..." class="form-control"></textarea>
+            </div>
+            <div>
+                <label><b>İçerik2</b></label>
+                <textarea name="Yazi3" cols="40" rows="3"  placeholder="Kısa İçerik Yazınız..." class="form-control"></textarea>
+            </div>
+            <div>
+                <label><b>Resim</b></label>
+                <input name="Resim" type="file">
+            </div>
+            @Html.HiddenFor(x => x.id)
+
+            <div>
+                <button class="button border with-icon">Yeni Tanıtım Ekle</button>
+            </div>
+            <br />
+        </form>
+    }
+</div>
+

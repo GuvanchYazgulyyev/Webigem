@@ -1,0 +1,179 @@
+﻿@using MyProject.Models.Sinif
+@model List<Hizmetler>
+@using MyProject.App_Code
+@{
+    ViewBag.Title = "TumHizmetler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c2c2c">
+    <meta name="msapplication-navbutton-color" content="#2c2c2c">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2c2c2c">
+    <title>Tüm Hizmetler|webigem Yazılım Şirketi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="e-ticaret,eticaret,SEO,web site onarımı,site bakımı,sosyal medya yönetimi,makale,web yazılım,web tasarım,grafik tasarım" />
+    <meta name="description" content="Ankara Yazilim Sirketi,Yazilim şirketi, Webigem Yazılım Şirketi | Web Yazılım | Web Tasarım | E-Ticaret | Grafik Tasarım | Ankara - İstanbul-İzmir" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="publisher" content="webigem.com" />
+    <meta name="copyright" content="webigem ®" />
+    <meta name="date-creation-yyyy" content="2021" />
+    <meta name="classification" content="Machine" />
+    <meta name="author" content="webigem Software Company E-commerce website construction & Service 7/24 Opening" />
+    <meta name="rating" content="all" />
+    <meta name="expires" content="no" />
+    <meta name="language" content="TR" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="all" />
+    <meta name="googlebot" content="NOODP" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="revisit-after" content="1 Day" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="GENERATOR" content="webigem.com" />
+    <meta name="RESOURCE-TYPE" content="DOCUMENT" />
+    <meta name="DISTRIBUTION" content="GLOBAL" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+    <meta name="REVISIT-AFTER" content="1 DAYS" />
+    <meta name="RATING" content="GENERAL" />
+    <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="webigem Software Company E-commerce website construction & Service 7/24 Opening" />
+    <meta property="og:url" content="https://webigem.com/" />
+    <meta property="og:title" content="webigem Software Company E-commerce website construction & Service 7/24 opening" />
+    <meta property="og:description" content="webigem Software Company E-commerce website construction & Service 7/24 opening" />
+    <meta property="og:image" content="~/Resimler/WEBİGEM.png" />
+    <link rel="canonical" href="https://webigem.com/" />
+    <link rel="shortcut icon" href="~/Resimler/WEBİGEM.png">
+    <link rel="apple-touch-icon" href="~/Resimler/WEBİGEM.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Resimler/WEBİGEM.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Resimler/WEBİGEM.png">
+    <link rel="icon" type="image/png" href="~/Content/WebigemDesign/main/default/assets/img/favicon.png">
+
+</head>
+<body>
+    <div class="inner-banner inner-bg2">
+        <div class="container">
+            <div class="inner-title text-center">
+                <h3>Servisimiz</h3>
+                <ul>
+                    <li>
+                        <a href="/">Ana Sayfa</a>
+                    </li>
+                    <li>
+                        <i class='bx bxs-chevrons-right'></i>
+                    </li>
+                    <li>Servisimiz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="service-area pt-100 pb-70">
+        <div class="container">
+            <div class="section-title text-center">
+                <span>Servisimiz</span>
+                <h2>
+                    Yüksek kaliteli hizmetler sunuyoruz
+                </h2>
+                <p>
+                    Bir okuyucunun, sayfa düzenine bakarken sayfanın okunabilir
+                    içeriği tarafından dikkatinin dağılacağı uzun süredir bilinen bir gerçektir.
+                </p>
+            </div>
+            <div class="row pt-45">
+                @foreach (var x in Model)
+                {
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="service-card">
+                            @if (x.KisaYazi.Length > 90)
+                            {
+                                <a href="~/Default/HizmetDetay/@x.id">
+                                    <img src="@x.iconResim" alt="Images">
+                                </a>
+                                <a href="~/Default/HizmetDetay/@x.id">
+                                    <h3>
+                                        @x.HizmetAd
+                                        @*@Html.ActionLink(x.HizmetAd, "HizmetDetay", new { id = x.id, ara2 = Seo.AdresDuzenle(x.HizmetAd) })*@
+                                    </h3>
+                                </a>
+                                <p>
+                                    @Html.Raw(x.KisaYazi.Substring(0, 90)) ...
+                                </p>
+                            }
+
+
+                            else
+                            {
+                                <a href="~/Default/HizmetDetay/@x.id">
+                                    <img src="@x.iconResim" alt="Images">
+                                </a>
+                                <a href="~/Default/HizmetDetay/@x.id">
+                                    <h3>
+                                        @x.HizmetAd
+                                        @*@Html.ActionLink(x.HizmetAd, "HizmetDetay", new { id = x.id, ara2 = Seo.AdresDuzenle(x.HizmetAd) })*@
+                                    </h3>
+                                </a>
+                                <p>
+                                    @Html.Raw(x.KisaYazi) ...
+                                </p>
+                            }
+
+
+
+
+
+
+                        </div>
+                    </div>
+                }
+
+
+                <div class="col-lg-12">
+                    <div class="pagination-area">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @*<div class="submission-area ptb-100">
+            <div class="container">
+                <div class="submission-title">
+                    <h2>Know Your Website Ranking</h2>
+                </div>
+                <form class="submission-form">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="website" placeholder="Your website">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="form-group border-line">
+                                <input type="text" class="form-control" id="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 offset-md-5 offset-lg-0">
+                            <button type="submit" class="default-btn">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>*@
+
+</body>
+
+</html>

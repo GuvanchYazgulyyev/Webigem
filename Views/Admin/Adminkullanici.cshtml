@@ -1,0 +1,35 @@
+﻿@using MyProject.Models.Sinif
+@model List<AdminGiris> 
+@{
+    ViewBag.Title = "Adminkullanici";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h3>Kullancılar</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Ad Soyad</th>
+            <th>Telefon</th>
+            <th>E-Posta</th>
+            <th>Şifre</th>
+            <th>Yetki</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.AdSoyad</td>
+                <td>@x.Telefon</td>
+                <td>@x.EPosta</td>
+                <td>@x.Sifre</td>
+                <td>@x.AdminYetki.YetkiAd</td>
+                <td><a href="~/Admin/AdminKulSil/@x.id" onclick="return confirm('Bunu Silmek İstediginizden Emin misin? @x.AdSoyad ')" class="button border with-icon" style="background-color:#ff0000; color:#fff">Sil</a></td>
+                <td><a href="~/Admin/AdminKulGetr/@x.id" class="button border with-icon">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Admin/AdminKulEkle/" class="button border with-icon">Yeni Kullanıcı Ekle</a>
+
+</div>

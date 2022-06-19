@@ -1,0 +1,44 @@
+﻿@using MyProject.Models.Sinif
+@model List<YapilanPSayisi>
+
+
+
+@foreach (var x in Model)
+{
+<div class="col-lg-3 col-sm-6 col-md-3">
+    @if (x.id == 1)
+    {
+        <div class="single-counter">
+            <i class='flaticon-customer'></i>
+            <h3><span class="counter">@x.sayi</span></h3>
+            <p>@x.Baslik</p>
+        </div>
+    }
+    @if (x.id == 2)
+    {
+        <div class="single-counter">
+            <i class='flaticon-loupe'></i>
+            <h3><span class="counter">@x.sayi</span></h3>
+            <p>@x.Baslik</p>
+        </div>
+    }
+    @if (x.id == 3)
+    {
+        <div class="single-counter">
+            <i class='flaticon-team'></i>
+            <h3><span class="counter">@x.sayi</span></h3>
+            <p>@x.Baslik</p>
+        </div>
+    }
+    @if (x.id == 4)
+    {
+        <div class="single-counter">
+            <i class='flaticon-success'></i>
+            <h3><span class="counter">@x.sayi</span></h3>
+            <p>@x.Baslik</p>
+        </div>
+    }
+  
+</div>
+}
+

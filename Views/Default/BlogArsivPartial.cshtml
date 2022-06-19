@@ -1,0 +1,12 @@
+﻿@using MyProject.Models.Sinif
+@model List<Bloglar>
+@using MyProject.App_Code
+
+@foreach (var o in Model)
+{
+    <li>
+        @Html.ActionLink(o.Tarih, "BlogDetay", new { id = o.id, ara = Seo.AdresDuzenle(o.Tarih) })
+        @*<a href="#">January <span>2020</span></a>*@
+    </li>
+}
+

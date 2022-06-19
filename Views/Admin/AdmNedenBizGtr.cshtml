@@ -1,0 +1,33 @@
+﻿@model MyProject.Models.Sinif.NedenBiz
+@{
+    ViewBag.Title = "AdmNedenBizGtr";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Ana Sayfa Neden Biz Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("AdmNedenBizGuncel", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <div>
+            <label><b>Yazı Başlıgı (Max 100 Karakter*)</b></label>
+            @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+        </div>
+
+        <div>
+            <label><b>Aly Başlık (Max 250 Karakter*)</b></label>
+            @Html.TextBoxFor(x => x.KisaYazi, new { @class = "form-control" })
+        </div>
+
+        <div>
+            @Html.HiddenFor(x => x.id)
+        </div>
+        <div>
+            <button class="button border with-icon">Değişiklikleri Kaydet</button>
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+}

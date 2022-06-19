@@ -1,0 +1,35 @@
+﻿@using MyProject.Models.Sinif
+@model List<HakkimizdaYazi> 
+@{
+    ViewBag.Title = "AdiminHakYazi";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h2 style="color:red;">Dikkat! Veriler silindikten sonra Extra veri ekleyemezsiniz, Bu yüzden verileri GÜNCELLE yöntemini tercih ediniz!</h2>
+    <h3>Hakkımda (Yazıları)</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Başlık</th>
+            <th>Kısa açıklama</th>
+            <th>Alt Parametre Başlık</th>
+            <th>Alt Parametre İçerik</th>
+            <th>Sıra No</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+
+                <td>@x.Baslik</td>
+                <td>@x.Kisaicerik</td>
+                <td>@x.HakkimizdaAltParametreBaslik</td>
+                <td>@x.HakkimizdaAltParametreicerik</td>
+                <td>@x.HakkimizdaAltParametreSiraNo</td>
+                <td><a href="~/Admin/AdminHakSil/@x.id" class="button border with-icon" onclick="return confirm('Bunu Silmek İstediginizden Emin misin? @x.Baslik ')" style="background-color:#ff0000; color:#fff">Sil</a></td>
+                <td><a href="~/Admin/AdminHakGetir/@x.id" class="button border with-icon">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,35 @@
+﻿@using MyProject.Models.Sinif
+@model List<Hizmetler> 
+@{
+    ViewBag.Title = "AdmHizmetler";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h3>Hizmetler</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Hizmet Adı</th>
+            <th>Alt Başlık</th>
+            <th>icon Resim</th>
+            <th>Resim 2</th>
+            <th>Üst Resim (Header)</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.HizmetAd</td>
+                <td>@x.KisaYazi</td>
+                <td><img src="@x.iconResim" width="100px;" alt="Alternate Text" /></td>
+                <td><img src="@x.Resim2" width="100px;" alt="Alternate Text" /></td>
+                <td><img src="@x.HeaderResim" width="100px;" alt="Alternate Text" /></td>
+                <td><a href="~/Admin/AdminHizmetSil/@x.id" onclick="return confirm('Bunu Silmek İstediginizden Emin misin? @x.HizmetAd ')" class="button border with-icon" style="background-color:#ff0000; color:#fff">Sil</a></td>
+                <td><a href="~/Admin/AdminHizmetGetir/@x.id" class="button border with-icon">(Detay)</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Admin/AdmHizEkle/" class="button border with-icon">Yeni Hizmet Ekle</a>
+
+</div>

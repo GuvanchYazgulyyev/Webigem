@@ -1,0 +1,35 @@
+﻿@model MyProject.Models.Sinif.KVKKSozlesmesi
+@{
+    ViewBag.Title = "AdminKVKKGetr";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Maddeleri Güncelle</h3>
+
+@using (Html.BeginForm("AdminKVKKGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <div>
+            <label><b>Başlık</b></label>
+            @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
+        </div><div>
+            <label><b>Alt Başlık</b></label>
+            @Html.TextBoxFor(x => x.AltBaslik2, new { @class = "form-control" })
+        </div>
+        <div>
+            <label><b>İçerik</b></label>
+            @Html.TextAreaFor(x => x.icerik, 5, 0, new { @class = "form-control" })
+
+        </div>
+
+        @Html.HiddenFor(x => x.id)
+
+        <div>
+            <button class="button border with-icon">Değişiklikleri Kaydet</button>
+            <br />
+            <br />
+        </div>
+
+    </div>
+}
+

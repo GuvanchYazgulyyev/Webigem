@@ -1,0 +1,323 @@
+.s_title {
+  font-family: Raleway;
+  font-size: 50px;
+  font-weight: 900;
+  color: #616160;
+}
+
+#mobil {
+  display: none;
+}
+#mobil2 {
+  display: none;
+}
+#pc2 {
+  display: block;
+}
+.s_par {
+  font-family: Raleway;
+  font-size: 23px;
+  color: #616161;
+  align-items: center;
+}
+.s_title {
+  padding-top: 50px;
+}
+
+.s_title2 {
+  font-family: Raleway;
+  font-size: 50px;
+  font-weight: 900;
+  color: #616160;
+  margin-top: -50px;
+}
+
+.s_par2 {
+  font-family: Raleway;
+  font-size: 23px;
+  color: #616161;
+  align-items: center;
+}
+
+.s_title3 {
+  font-family: Raleway;
+  font-size: 50px;
+  font-weight: 900;
+  color: #616160;
+}
+
+.s_par3 {
+  font-family: Raleway;
+  font-size: 23px;
+  color: #616161;
+  align-items: center;
+}
+
+/* .resim1 {
+    height: "420px";
+    width: "420px";
+  } */
+
+img.resim1 {
+  height: 420px;
+  width: 420px;
+  margin-top: -80px;
+}
+
+img.resim2 {
+  height: auto;
+  width: auto;
+  margin-top: -70px;
+}
+img.resim3 {
+  height: 400px;
+  width: 450px;
+  margin-top: -90px;
+}
+.col-md-6 {
+  padding: 0px;
+}
+
+.rightside,
+.leftside {
+  height: 350px;
+  width: 100%;
+  margin-left: 20%;
+}
+
+/* @media screen and (min-width: 768px) {
+    .leftside,
+    .rightside {
+      height: 47vh;
+    }
+  } */
+
+.i-holder {
+  padding-left: 50px;
+  padding-right: 50px;
+  position: relative;
+}
+
+.teklif {
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  position: absolute;
+}
+
+/* .teklif-metin {
+    align-content: center;
+    align-items: center;
+    display: flex;
+  } */
+
+.teklifall {
+  padding-left: 70px;
+}
+
+.second-image {
+  padding-top: 100px;
+  /* padding left:100px; */
+}
+
+/* 
+  .l-bg {
+    background-color: #e76b0a;
+    padding-right: 0px;
+    padding-right: 0px;
+  } */
+/*********************************************Uygulama İndir Kısmı**********/
+.uygulamaindir {
+  width: 100%;
+  height: 500px;
+}
+.uygulamaarkaplan {
+  height: 500px;
+}
+.col-md-6 h2 {
+  /* color: #fff; */
+  font-weight: bold;
+  font-size: 48px;
+  /* text-align: center; */
+  padding-top: 10%;
+  margin-right: 40%;
+  font-family: Raleway;
+}
+.col-md-6 p {
+  /* color: #616161; */
+  font-family: Raleway;
+  /* align-items: center; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+
+.mobilresim {
+  height: 430px;
+  float: right;
+  /* padding-top: 7%; */
+  padding-top: 65px;
+  /* margin-bottom: 2%; */
+  margin-right: 20%;
+  align-items: center;
+}
+.uygulamaicon {
+  float: left;
+  /* align-items: center; */
+  margin-top: 10%;
+  padding: 5px 5px 0px;
+  width: 190px;
+  cursor: pointer;
+}
+.pcicin {
+  display: block;
+}
+.telicin {
+  display: none;
+}
+
+/*******Medya Kısmı******/
+
+@media only screen and (max-width: 600px) {
+  /* .categories-boxes-container {
+    width: calc(100%);
+    left: 20px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  } */
+
+  /*************Uygulama İndir Kısmı**************/
+  .pcicin {
+    display: none;
+  }
+  .telicin {
+    display: block;
+  }
+  .uygulamaarkaplanmobil {
+    height: 450px;
+  }
+  .uygulamaindir {
+    width: 100%;
+    height: 500px;
+  }
+
+  .col-md-3 h2 {
+    /* color: #fff; */
+    font-weight: bold;
+    font-size: 24px;
+    /* text-align: center; */
+    padding-top: 70px;
+    padding-left: 10px;
+    /* margin-right: 40%; */
+    font-family: Raleway;
+    align-items: center;
+    /* float: left; */
+  }
+  .col-md-3 p {
+    /* color: #fff; */
+    font-family: Raleway;
+    /* align-items: center; */
+    padding-top: 10px;
+    /* margin-left: 10px; */
+    font-weight: 500;
+    align-items: center;
+  }
+
+  .mobilresim1 {
+    height: 330px;
+    float: left;
+    /* padding-top: 7%; */
+    padding-top: 65px;
+    /* margin-bottom: 2%; */
+    /* padding-right: 10px; */
+  }
+  .uygulamaicon1 {
+    float: right;
+    /* align-items: center; */
+    padding: 5px 5px 0px 0px;
+    width: 105px;
+    cursor: pointer;
+  }
+
+  /******************************/
+  .s_title {
+    font-family: Raleway;
+    font-size: 30px;
+    font-weight: 900;
+    color: #616160;
+    text-align: center;
+    text-justify: auto;
+  }
+
+  .s_par {
+    font-family: Raleway;
+    font-size: 22px;
+    color: #616161;
+    text-align: center;
+    text-justify: auto;
+  }
+  /********Önemli*******/
+  #mobil {
+    display: block;
+  }
+
+  #mobil2 {
+    display: block;
+  }
+
+  /* .resim1 {
+          height: "420px";
+          width: "420px";
+        } */
+
+  img.resim1 {
+    height: 100%;
+    width: 100%;
+    /* width: 100%; */
+    margin-left: -25%;
+    margin-bottom: 20px;
+    padding-top: -90px;
+  }
+  #pc {
+    display: none;
+  }
+
+  #pc2 {
+    display: none;
+  }
+
+  .rightside,
+  .leftside {
+    height: 350px;
+    width: 100%;
+  }
+
+  .i-holder {
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+  }
+
+  .teklif {
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    position: absolute;
+  }
+
+  /* .teklif-metin {
+          align-content: center;
+          align-items: center;
+          display: flex;
+        } */
+
+  /* .teklifall {
+      padding-left: 70px;
+    } */
+
+  .second-image {
+    padding-top: 100px;
+    /* padding left:100px; */
+  }
+}

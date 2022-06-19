@@ -1,0 +1,37 @@
+﻿@using MyProject.Models.Sinif
+@model List<ProjeilerlemeSureci> 
+@{
+    ViewBag.Title = "AdmProjeCalismaSureci";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h3>Çalışma Sürecimiz</h3>
+    <table class="table table-bordered">
+        <tr>
+           
+            <th>Başlık</th>
+            <th>Alt Başlık</th>
+            <th>Sıra</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+               
+                <td>@x.Baslik</td>
+                <td>@x.AltBaslik</td>
+                <td>@x.Sayi</td>
+                <td><a href="~/Admin/AdmProjeCalismaSureciSil/@x.id" onclick="return confirm('Bunu Silmek İstediginizden Emin misin? @x.Baslik')" class="button border with-icon" style="background-color:#ff0000; color:#fff">Sil</a></td>
+                <td><a href="~/Admin/AdmProjeCalismaSureciGetir/@x.id" class="button border with-icon">Güncelle (Detaylı Gör)</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Admin/AdmProjeCalismaSureciEkle" class="button border with-icon">Ekleme Yap</a>
+
+
+</div>
+

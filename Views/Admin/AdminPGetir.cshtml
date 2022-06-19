@@ -1,0 +1,64 @@
+﻿@model MyProject.Models.Sinif.Paketler
+@{
+    ViewBag.Title = "AdminPGetir";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Paketler Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("AdminPGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <label><b>Paket Fiyatı</b></label>
+        @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    </div>
+    <div>
+        <label><b>İndirim Oranı</b></label>
+        @Html.TextBoxFor(x => x.inidirim, new { @class = "form-control" })
+    </div>
+    <div>
+        <label><b>Baslik (Paket Adı)</b></label>
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+
+    </div>
+
+    <div>
+        <label><b>Maddeler1</b></label>
+        @Html.TextAreaFor(x => x.Maddeler1, 4, 0, new { @class = "form-control", id = "summernote" })
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Özel Notunuzu Buraya Giriniz! Örnk:"Daha Fazla Özellik"',
+            tabsize: 2,
+            height: 298,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    </script>
+
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <div>
+        <button class="button border with-icon">Değişiklikleri Kaydet</button>
+        <br />
+        <br />
+    </div>
+
+
+}
+

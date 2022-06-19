@@ -1,0 +1,39 @@
+﻿@model MyProject.Models.Sinif.MutluMusYorumu
+@{
+    ViewBag.Title = "AdmMutMusGetr";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Müşteri Yorum Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("AdmMutMusGuncelle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div id="div-boyut">
+        <label><b>Ad Soyad</b></label>
+        @Html.TextBoxFor(x => x.BaslikAd, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label><b>İçerik</b></label>
+        @Html.TextAreaFor(x => x.icerik, 3, 0, new { @class = "form-control" })
+
+    </div> 
+    <div>
+        <label><b>Resim</b> <b> 90 x 90 </b> Boyutunda Olmalıdır!</label>
+        <input type="file" name="Resim"  />
+    </div>
+
+
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <div>
+        <button class="button border with-icon">Değişiklikleri Kaydet</button>
+        <br />
+        <br />
+    </div>
+
+
+}
+
+

@@ -1,0 +1,114 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/magnific-popup.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/animate.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/fonts/flaticon.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/meanmenu.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/style.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/responsive.css">
+    <link rel="icon" type="image/png" href="~/Content/WebigemDesign/main/default/assets/img/favicon.png">
+
+    <title>Admin Panel</title>
+</head>
+<body>
+
+
+
+
+
+    <section class="sign-in-area ptb-100">
+        <div class="container">
+            <div class="section-title text-center">
+                <span>Şifre İste</span>
+                <h2>
+                    Yeni Şifre İste!
+                </h2>
+
+            </div>
+            <div class="contact-wrap-form log-in-width">
+                @using (Html.BeginForm("SifreResetA", "MPanel", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <form method="post">
+
+
+
+
+                        @if (TempData["sifreyenile"] != null)
+                        {
+                            <span class="alert alert-danger" style="font-size:12px;">@TempData["sifreyenile"]</span>
+                            <br />
+                            <br />
+                        }
+
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input class="form-control" required="" type="email" name="EPosta" placeholder="E Posta Adresiniz Giriniz!">
+                                </div>
+                            </div>
+
+
+
+                            <button class="default-btn btn-two">
+                                Şifre Al
+                            </button>
+
+                        </div>
+                    </form>
+                }
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="~/Content/WebigemDesign/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="~/Content/WebigemDesign/main/default/assets/js/jquery-3.5.0.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/meanmenu.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/owl.carousel.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/jquery.magnific-popup.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/wow.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/form-validator.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/contact-form-script.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+﻿@using MyProject.Models.Sinif
+@model List<Bloglar>
+@using MyProject.App_Code
+
+
+
+@foreach (var x in Model)
+{
+    <div class="col-lg-4 col-md-6">
+        <div class="blog-card">
+            <div class="blog-img">
+                <a href="#">
+                    <img src="@x.Resim" alt="Blog Images">
+                </a>
+            </div>
+            <div class="blog-content">
+                @if (x.icerik.Length > 90)
+                {
+                    @*<div class="blog-tag">
+                            <a href="~/Default/BlogDetay/@x.id"><span>@Html.ActionLink(x.Baslik, "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</span></a>
+                        </div>*@
+                    <a href="~/Default/BlogDetay/@x.id">
+                        <h3>@Html.ActionLink(x.Baslik, "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</h3>
+                    </a>
+                    <a href="~/Default/BlogDetay/@x.id" class="read-btn">@Html.ActionLink("İncele", "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</a>
+                }
+                else
+                {
+
+                    <a href="~/Default/BlogDetay/@x.id">
+                        <h3>@Html.ActionLink(x.Baslik, "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</h3>
+                    </a>
+                    <a href="~/Default/BlogDetay/@x.id" class="read-btn">@Html.ActionLink("İncele", "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</a>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+

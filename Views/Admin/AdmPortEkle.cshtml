@@ -1,0 +1,42 @@
+﻿@model MyProject.Models.Sinif.Projeler
+@{
+    ViewBag.Title = "AdmPortEkle";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h2>Proje Ekle</h2>
+<div class="col-md-12">
+    @using (Html.BeginForm("AdmPortEkle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <form class="form-group" method="post">
+            <br />
+            Başlık
+            @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", required = "" })
+
+            @*<br />
+                Alt Başlık
+                <textarea name="Baslik2" cols="40" rows="3" maxlength="500" required="" class="form-control"></textarea>*@
+
+            <br />
+            <b>Proje URL'sini Ekleyiniz ÖRNK <i> https://webigem.com/ </i> </b>
+            @Html.TextBoxFor(x => x.icerik, new { @class = "form-control", required = "" })
+
+            <br />
+            Resim <b>Boyut Yükseklik 1500 px Olmalıdır</b>
+            <input type="file" required="" name="Resim" />
+            <br />
+            Tarih
+            @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+            <br />
+            @*Müşteri Adı
+                @Html.TextBoxFor(x => x.MusteriAd, new { @class = "form-control" })
+                <br />*@
+            Proje Tipi (Örnek E Ticaret...)
+            @Html.TextBoxFor(x => x.ProjeTip, new { @class = "form-control", required = "" })
+            <br />
+            @Html.HiddenFor(x => x.id)
+            <br />
+            <button class="button border with-icon">Yeni Proje Ekle</button>
+        </form>
+    }
+</div>

@@ -1,0 +1,45 @@
+﻿@using MyProject.Models.Sinif
+@model List<Hizmetler>
+@using MyProject.App_Code
+
+
+@*else
+    {*@
+
+<!--<div class="padding-4-half-rem-lr padding-5-rem-tb lg-padding-4-rem-all last-paragraph-no-margin xl-padding-3-rem-all xs-padding-5-rem-all">
+    <p class="interactive-banners-action-content w-80 text-white opacity-6 lg-w-70"> Html.Raw(k.KisaYazi))</p>
+
+    <p class="btn btn-link btn-extra-large text-white margin-20px-top" style="background-color:white;">
+        Html.ActionLink("Hizmetleri Keşfedin", "HizmetDetay", new { id = k.id, ara3 = Seo.AdresDuzenle(k.HizmetAd) })
+
+    </p>-->
+@*<a href="~/Default/HizmetDetay/@k.id" class="btn btn-link btn-extra-large text-white margin-20px-top">Hizmetleri Keşfedin</a>*@
+<!--</div>-->
+
+
+
+
+@foreach (var x in Model)
+{
+    <div class="service-card">
+        <a href="~/Default/HizmetDetay/@x.id">
+            <img src="@x.iconResim" alt="Images">
+        </a>
+        <a href="~/Default/HizmetDetay/@x.id">
+            <h3>@x.HizmetAd</h3>
+
+        </a>
+
+        @if (x.KisaYazi.Length > 80)
+        {
+            <p>
+                @Html.Raw(x.KisaYazi.Substring(0, 80))
+
+            </p>
+        }
+        else
+        {
+
+        }
+    </div>
+}

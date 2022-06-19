@@ -1,0 +1,26 @@
+﻿@using MyProject.Models.Sinif
+@model List<NedenBiz> 
+@{
+    ViewBag.Title = "AdminNedenBiz";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h3>Neden biz</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Başlık</th>
+            <th>Kısa Yazı</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Baslik</td>
+                <td>@x.KisaYazi</td>
+                <td><a href="~/Admin/AdmNedenBizGtr/@x.id" class="button border with-icon">(Detay)</a></td>
+            </tr>
+        }
+    </table>
+
+</div>

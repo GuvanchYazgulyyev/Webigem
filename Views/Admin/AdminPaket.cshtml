@@ -1,0 +1,34 @@
+﻿@using MyProject.Models.Sinif
+@model List<Paketler>
+@{
+    ViewBag.Title = "AdminPaket";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h3>Paketler</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Fiyat</th>
+            <th>İndirim</th>
+            <th>Başlık</th>
+            <th>Maddeler</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+          
+                <td>@x.Fiyat</td>
+                <td>@x.inidirim</td>
+                <td>@x.Baslik</td>
+                <td>@Html.Raw(x.Maddeler1)</td>
+                <td><a href="~/Admin/AdminPSil/@x.id" class="button border with-icon" onclick="return confirm('Bunu Silmek İstediginizden Emin misin? x.Baslik ')" style="background-color:#ff0000; color:#fff">Sil</a></td>
+                <td><a href="~/Admin/AdminPGetir/@x.id" class="button border with-icon">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Admin/AdminPEkle/" class="button border with-icon">Yeni Paket Ekle</a>
+
+</div>

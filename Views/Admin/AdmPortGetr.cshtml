@@ -1,0 +1,60 @@
+﻿@model MyProject.Models.Sinif.Projeler
+@{
+    ViewBag.Title = "AdmPortGetr";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Porfoil Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("AdmPortGuncell", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div id="div-boyut">
+        <label><b>Başlık</b></label>
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    </div>
+    @*<div>
+            <label><b>Alt Başlık</b></label>
+            @Html.TextAreaFor(x => x.Baslik2, 3, 0, new { @class = "form-control" })
+
+        </div>*@
+    <div>
+        <label><b>Proje URL'sini Ekleyiniz ÖRNK <i> https://webigem.com/ </i> </b></label>
+        @Html.TextBoxFor(x => x.icerik, new { @class = "form-control" })
+
+        @*@Html.TextAreaFor(x => x.icerik, 4, 0, new { @class = "form-control" })*@
+    </div>
+    <div>
+        <label><b>Resim (Proje Ekran Görüntüsü)</b> <b>Boyut Yükseklik 1500 px Olmalıdır</b></label>
+        <input type="file" name="Resim" />
+    </div>
+
+    <div>
+        <label><b>Tarih</b></label>
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    </div>
+
+
+    @*<div>
+            <label><b>Müşteri Adı</b></label>
+            @Html.TextBoxFor(x => x.MusteriAd, new { @class = "form-control" })
+        </div>*@
+
+
+    <div>
+        <label><b>Proje Tipi</b></label>
+        @Html.TextBoxFor(x => x.ProjeTip, new { @class = "form-control" })
+    </div>
+
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <div>
+        <button class="button border with-icon">Değişiklikleri Kaydet</button>
+        <br />
+        <br />
+    </div>
+
+
+}
+
+

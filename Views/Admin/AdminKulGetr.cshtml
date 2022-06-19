@@ -1,0 +1,42 @@
+﻿@model MyProject.Models.Sinif.AdminGiris
+@{
+    ViewBag.Title = "AdminKulGetr";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Kullanıcı Sayfasını Güncelle</h3>
+
+@using (Html.BeginForm("AdmKulGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <label><b>Ad Soyad</b></label>
+        @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    </div>
+    <div>
+        <label><b>Telefon</b></label>
+        @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+    </div>
+    <div>
+        <label><b>E-Posta</b></label>
+        @Html.TextBoxFor(x => x.EPosta, new { @class = "form-control" })
+    </div>
+    <div>
+        <label><b>Şifre</b></label>
+        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    </div>
+
+    <label><b>Yetki</b></label>
+    @Html.DropDownListFor(x => x.Rolid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <div>
+        <button class="button border with-icon">Değişiklikleri Kaydet</button>
+        <br />
+        <br />
+    </div>
+
+
+}
+

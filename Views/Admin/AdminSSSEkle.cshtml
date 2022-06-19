@@ -1,0 +1,26 @@
+﻿@model MyProject.Models.Sinif.SSS
+@{
+    ViewBag.Title = "AdminSSSEkle";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Cevap Ekle</h3>
+
+<div class="col-md-12" id="div-boyut">
+    <form method="post">
+        <div>
+            <label><b>Başlık</b></label>
+            <input type="text" name="Baslik" class="form-control" />
+        </div>
+        <div>
+            <label><b>İçerik</b></label>
+            <textarea name="icerik" cols="40" maxlength="2000" rows="5" class="form-control"></textarea>
+        </div>
+        <div>
+            <button class="button border with-icon">İşlemi Onayla</button>
+        </div>
+        <br />
+    </form>
+
+</div>
+

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MyProject.Models.Sinif.HakkimizdaYazi>
+
+
+@foreach (var x in Model)
+{
+    <h2>@x.Baslik</h2>
+
+    if (x.Kisaicerik.Length > 140)
+    {
+        <p>
+            @Html.Raw(x.Kisaicerik.Substring(0, 135)) ...
+        </p>
+
+        <p>
+            @Html.Raw(x.HakkimizdaAltParametreBaslik.Substring(0, 210)) ...
+        </p>
+    }
+    else
+    {
+        <p>
+            @Html.Raw(x.Kisaicerik)
+        </p>
+
+        <p>
+            @Html.Raw(x.HakkimizdaAltParametreBaslik)
+        </p>
+
+
+    }
+
+
+
+    <div class="about-btn">
+        <a href="/Default/Hakkimizda" class="default-btn">İncele</a>
+    </div>
+}
+
+

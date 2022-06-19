@@ -1,0 +1,29 @@
+﻿@using MyProject.Models.Sinif
+@model List<SiteiletisimBilgi>
+@{
+    ViewBag.Title = "AdmiletsmBilgi";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h3>İletişim Bilgileri</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Başlık</th>
+            <th>E-Posta</th>
+            <th>Tel No:</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Baslik</td>
+                <td>@x.EPosta</td>
+                <td>@x.Tel</td>
+                @*<td>@x.Resim</td>*@
+                <td><a href="~/Admin/AdmiltGetr/@x.id" class="button border with-icon">Güncelle (Detaylı Gör)</a></td>
+            </tr>
+        }
+    </table>
+
+</div>

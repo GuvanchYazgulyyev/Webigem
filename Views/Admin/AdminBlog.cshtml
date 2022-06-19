@@ -1,0 +1,36 @@
+﻿@using MyProject.Models.Sinif
+@model List<Bloglar> 
+@{
+    ViewBag.Title = "AdminBlog";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<div style="width:100%" ; class="col-md-12 table table-hover">
+    <h3>Bloglar</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Blog Başlıgı</th>
+            <th>Alıntı</th>
+            <th>Resim</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                @*<td>@x.id</td>*@
+                <td>@x.Baslik</td>
+                <td>@Html.Raw(x.Alinti)</td>
+                <td><img src="@x.Resim" width="100px;" alt="Resim Yok" /></td>
+                @*<td>@x.icerik2</td>*@
+                <td>@x.Tarih</td>
+                <td><a href="~/Admin/AdminBSil/@x.id" class="button border with-icon" onclick="return confirm('Bunu Silmek İstediginizden Emin misin? @x.Baslik ')" style="background-color:#ff0000; color:#fff">Sil</a></td>
+                <td><a href="~/Admin/AdminBGetir/@x.id" class="button border with-icon">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Admin/AdminBEkle/" class="button border with-icon">Yeni Blog Ekle</a>
+
+</div>
+

@@ -1,0 +1,31 @@
+﻿@model MyProject.Models.Sinif.Notlar
+
+@*@using (Html.BeginForm("AdminHizFormNotYazdir", "Admin", FormMethod.Post))
+    {*@
+<form class="add-comment" method="post">
+    @if (ViewBag.Kontrol != null)
+    {
+        <h2 class="text-success" style="float:right" ;>@ViewBag.Kontrol</h2>
+
+    }
+
+
+
+
+    <div>
+        <input class="form-control" type="hidden" name="Formid" value="@ViewBag.deger">
+
+        <textarea cols="40" required="" placeholder="Not Giriniz..." name="icerik" rows="3"></textarea>
+    </div>
+
+
+
+    <button class="button" type="submit">Not Ekle</button>
+    @if (ViewBag.kontrol3 != null)
+    {
+        <a href="~/Admin/AdminHizFormNot/" style="float:right" ; class="button border with-icon">@ViewBag.kontrol3</a>
+
+    }
+    <div class="clearfix"></div>
+</form>
+@*}*@

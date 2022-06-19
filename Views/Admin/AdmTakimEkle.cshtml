@@ -1,0 +1,44 @@
+﻿@model MyProject.Models.Sinif.Takim
+@{
+    ViewBag.Title = "AdmTakimEkle";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h2>Yeni Takım Arkadaşı Ekle</h2>
+<div class="col-md-12">
+    @using (Html.BeginForm("AdmTakimEkle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <form class="form-group" method="post">
+            <br />
+            Ad Soyad
+            @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+
+            <br />
+            Meslek
+            @Html.TextBoxFor(x => x.Meslek, new { @class = "form-control" })
+
+            <br />
+            Resim <b> 270X330 Boyutu</b>
+            @*<input type="text" name="Resim" placeholder="Url Giriniz" class="form-control" />*@
+
+            <input type="file" name="Resim" />
+            <br />
+            Linkedln
+            @Html.TextBoxFor(x => x.Face, new { @class = "form-control" })
+            <br />
+            GitHub
+            @Html.TextBoxFor(x => x.Tweet, new { @class = "form-control" })
+            <br />
+
+
+            İnstagram
+            @Html.TextBoxFor(x => x.inst, new { @class = "form-control" })
+            <br />
+            @Html.HiddenFor(x => x.id)
+            <br />
+            <button class="button border with-icon">Yeni Takım Arkadaşı Ekle</button>
+
+        </form>
+    }
+</div>
+

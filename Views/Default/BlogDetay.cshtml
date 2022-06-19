@@ -1,0 +1,195 @@
+﻿@using MyProject.Models.Sinif
+@model List<Bloglar>
+@{
+    ViewBag.Title = "BlogDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c2c2c">
+    <meta name="msapplication-navbutton-color" content="#2c2c2c">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2c2c2c">
+    <title>Tüm Makaleler,Bloglar, webigem Yazılım Şirketi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="tum blog,makale,web tasarım,reklam,grafik tasarım,e-ticaret,seo" />
+    <meta name="description" content="Ankara Yazilim Sirketi yeni makaleler,Yazilim şirketi, Webigem Yazılım Şirketi | Web Yazılım | Web Tasarım | E-Ticaret | Grafik Tasarım | Ankara - İstanbul-İzmir" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="publisher" content="webigem.com" />
+    <meta name="copyright" content="webigem ®" />
+    <meta name="date-creation-yyyy" content="2021" />
+    <meta name="classification" content="Machine" />
+    <meta name="author" content="webigem Software Company E-commerce website construction & Service 7/24 Opening" />
+    <meta name="rating" content="all" />
+    <meta name="expires" content="no" />
+    <meta name="language" content="TR" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="all" />
+    <meta name="googlebot" content="NOODP" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="revisit-after" content="1 Day" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="GENERATOR" content="webigem.com" />
+    <meta name="RESOURCE-TYPE" content="DOCUMENT" />
+    <meta name="DISTRIBUTION" content="GLOBAL" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+    <meta name="REVISIT-AFTER" content="1 DAYS" />
+    <meta name="RATING" content="GENERAL" />
+    <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="webigem Software Company E-commerce website construction & Service 7/24 Opening" />
+    <meta property="og:url" content="https://webigem.com/" />
+    <meta property="og:title" content="webigem Software Company E-commerce website construction & Service 7/24 opening" />
+    <meta property="og:description" content="webigem Software Company E-commerce website construction & Service 7/24 opening" />
+    <meta property="og:image" content="~/Resimler/WEBİGEM.png" />
+    <link rel="canonical" href="https://webigem.com/" />
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="~/Resimler/WEBİGEM.png">
+    <link rel="apple-touch-icon" href="~/Resimler/WEBİGEM.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Resimler/WEBİGEM.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Resimler/WEBİGEM.png">
+</head>
+<body>
+    <div class="inner-banner inner-bg5">
+        <div class="container">
+            <div class="inner-title text-center">
+                <h3>Blog Detay</h3>
+                <ul>
+                    <li>
+                        <a href="/">Ana Sayfa</a>
+                    </li>
+                    <li>
+                        <i class='bx bxs-chevrons-right'></i>
+                    </li>
+                    @foreach (var x in Model)
+                    {
+                        <li>@x.Baslik</li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog-dtls ptb-100">
+        <div class="container">
+            <div class="row">
+                @foreach (var x in Model)
+                {
+                    <div class="col-lg-8">
+                        <div class="blog-dtls-content">
+                            <div class="blog-dtls-img">
+                                <img src="@x.Resim" alt="Blog Images">
+                            </div>
+                            <div class="blog-text">
+                                <h2>@x.Baslik</h2>
+                                <p>
+                                    @Html.Raw(x.icerik)
+                                </p>
+                            
+                                <blockquote class="boxicon-quote">
+                                    <p>
+                                       @Html.Raw(x.Alinti)
+                                    </p>
+                                </blockquote>
+                                <p>
+                                    @Html.Raw(x.icerik2)
+                                </p>
+                            </div>
+                      
+                           
+                            <div class="article-footer">
+                                <div class="article-tags">
+                                    <span><i class='bx bx-share-alt'></i></span>
+                                    <a href="#">Paylaş</a>
+                                </div>
+                                <div class="article-share">
+                                    <ul class="social">
+                                        <li>
+                                            <a href="https://www.facebook.com/" target="_blank">
+                                                <i class='bx bxl-facebook'></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://twitter.com/" target="_blank">
+                                                <i class='bx bxl-twitter'></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/feed/" target="_blank">
+                                                <i class='bx bxl-linkedin'></i>
+                                            </a>
+                                        </li>
+                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            @*<div class="post-navigation">
+                                <div class="navigation-links">
+                                    <div class="nav-previous">
+                                        <a href="#">Prev Post</a>
+                                    </div>
+                                    <div class="nav-next">
+                                        <a href="#">Next Post</a>
+                                    </div>
+                                </div>
+                            </div>*@
+                            
+                        </div>
+                    </div>
+                }
+
+
+
+
+
+
+
+                <div class="col-lg-4">
+                    <div class="widget-area">
+                        
+                        <section class="widget widget-popular-post">
+                            <h3 class="widget-title">
+                                Popüler Gönderiler
+                            </h3>
+                            <div class="post-wrap">
+                                @Html.Action("PopulerBlogPartial", "Default")
+
+                           
+
+                            </div>
+                        </section>
+                        <section class="widget widget_categories">
+                            <h3 class="widget-title">Arşiv</h3>
+                            <div class="post-wrap">
+                                <ul>
+                                    @Html.Action("BlogArsivPartial", "Default")
+
+
+                                </ul>
+                            </div>
+                        </section>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

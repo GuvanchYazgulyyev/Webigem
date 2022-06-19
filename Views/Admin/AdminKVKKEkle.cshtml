@@ -1,0 +1,53 @@
+﻿@model MyProject.Models.Sinif.KVKKSozlesmesi
+@{
+    ViewBag.Title = "AdminKVKKEkle";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h3>Sözleşme Ekle</h3>
+
+<div class="col-md-12" id="div-boyut">
+    <form method="post">
+        @*<div>
+            <label><b>Başlık</b></label>
+            <input type="text" name="AltBaslik" class="form-control" />
+        </div>
+        <div>
+            <label><b>Alt Başlık</b></label>
+            <input type="text" name="AltBaslik2" class="form-control" />
+        </div>*@
+        <div>
+            <label><b>İçerik</b></label>
+            <textarea name="icerik" cols="40" rows="5" id="summernote" class="form-control"></textarea>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+
+        <script>
+                                        $('#summernote').summernote({
+                                            placeholder: 'Özel Notunuzu Buraya Giriniz! Örnk:"Daha Fazla Özellik"',
+                                            tabsize: 2,
+                                            height: 290,
+                                            toolbar: [
+                                                ['style', ['style']],
+                                                ['font', ['bold', 'underline', 'clear']],
+                                                ['color', ['color']],
+                                                ['para', ['ul', 'ol', 'paragraph']],
+                                                ['table', ['table']],
+                                                ['insert', ['link', 'picture', 'video']],
+                                                ['view', ['fullscreen', 'codeview', 'help']]
+                                            ]
+                                        });
+        </script>
+
+        <div>
+            <button class="button border with-icon">İşlemi Onayla</button>
+        </div>
+        <br />
+    </form>
+
+</div>

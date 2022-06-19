@@ -1,0 +1,17 @@
+﻿@using MyProject.Models.Sinif
+@model List<Hizmetler>
+@using MyProject.App_Code
+
+
+
+
+@foreach (var x in Model)
+{
+<li>
+    @Html.ActionLink(x.HizmetAd, "HizmetDetay", new { id = x.id, ara2 = Seo.AdresDuzenle(x.HizmetAd) })
+
+    @*<a href="~/Default/HizmetDetay/@x.id">@x.HizmetAd <i class='bx bx-plus'></i></a>*@
+</li>
+}
+
+

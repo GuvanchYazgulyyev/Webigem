@@ -1,0 +1,49 @@
+.active a {
+  background-color: #e76b0a !important;
+}
+
+.nav {
+  padding-left: 40px;
+}
+.hizmet-yazi {
+  text-align: center;
+  /* background-color: #fff; */
+  border-radius: 4.5px;
+  padding-top: 0%;
+}
+.hizmet-yazi h3 {
+  margin-left: -250px;
+  color: #616161;
+  font-weight: bold;
+}
+
+@media (min-width: 1240px) and (max-width: 1440px) {
+  #transparent #main #upper-decorator {
+    padding-top: 165px;
+    padding-bottom: 30px;
+  }
+  .hizmet-yazi {
+    text-align: center;
+    /* background-color: #fff; */
+    border-radius: 4.5px;
+    padding-top: 0%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hizmet-yazi {
+    text-align: center;
+    /* background-color: #fff; */
+    border-radius: 4.5px;
+    margin-left: 15%;
+    padding-top: 0%;
+  }
+
+  #hizmetyazi {
+    text-align: center;
+    /* background-color: #fff; */
+    border-radius: 4.5px;
+    margin-left: 18%;
+    padding-top: 0%;
+  }
+}

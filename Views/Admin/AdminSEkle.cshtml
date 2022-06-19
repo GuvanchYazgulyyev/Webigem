@@ -1,0 +1,29 @@
+﻿@model MyProject.Models.Sinif.Slider
+@{
+    ViewBag.Title = "AdminSEkle";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+<h2>Yeni Slider Ekle</h2>
+<div class="col-md-12">
+    @using (Html.BeginForm("AdminSEkle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <form class="form-group" method="post">
+
+            Başlık
+            <input type="text" name="Baslik" maxlength="200" class="form-control" />
+            <br />
+            Kısa Yazı
+            <textarea name="KisaYazi" cols="40" rows="2" maxlength="250" required="" class="form-control"></textarea>
+            <br />
+            Resim
+            @*<input type="text" name="Resim" placeholder="Url Giriniz" class="form-control" />*@
+
+            <input type="file" name="Resim" />
+            @Html.HiddenFor(x => x.id)
+            <br />
+            <button class="button border with-icon">Yeni Slider Ekle</button>
+
+        </form>
+    }
+</div>

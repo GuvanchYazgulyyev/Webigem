@@ -1,0 +1,721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84FB5172-88BC-496A-AD8E-EF351C16BB47}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyProject</RootNamespace>
+    <AssemblyName>MyProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44318</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>packages\FluentValidation.10.4.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.26\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.26\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.26\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\Seo.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\MPanelController.cs" />
+    <Compile Include="FluentValidation\FormSendValidation.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204060056160_vaidation.cs" />
+    <Compile Include="Migrations\202204060056160_vaidation.designer.cs">
+      <DependentUpon>202204060056160_vaidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\MailGonder.cs" />
+    <Compile Include="Models\Sinif\AdminGiris.cs" />
+    <Compile Include="Models\Sinif\AdminYetki.cs" />
+    <Compile Include="Models\Sinif\Bloglar.cs" />
+    <Compile Include="Models\Sinif\Context.cs" />
+    <Compile Include="Models\Sinif\HakkimizdaYazi.cs" />
+    <Compile Include="Models\Sinif\HizmetForm.cs" />
+    <Compile Include="Models\Sinif\Hizmetler.cs" />
+    <Compile Include="Models\Sinif\iletisimMesaj.cs" />
+    <Compile Include="Models\Sinif\KVKKSozlesmesi.cs" />
+    <Compile Include="Models\Sinif\Musteriler.cs" />
+    <Compile Include="Models\Sinif\MutluMusYorumu.cs" />
+    <Compile Include="Models\Sinif\NedenBiz.cs" />
+    <Compile Include="Models\Sinif\Notlar.cs" />
+    <Compile Include="Models\Sinif\Paketler.cs" />
+    <Compile Include="Models\Sinif\ProjeilerlemeSureci.cs" />
+    <Compile Include="Models\Sinif\Projeler.cs" />
+    <Compile Include="Models\Sinif\Referanslar.cs" />
+    <Compile Include="Models\Sinif\Slider.cs" />
+    <Compile Include="Models\Sinif\Sparisler.cs" />
+    <Compile Include="Models\Sinif\SSS.cs" />
+    <Compile Include="Models\Sinif\Takim.cs" />
+    <Compile Include="Models\Sinif\SiteiletisimBilgi.cs" />
+    <Compile Include="Models\Sinif\WebSiteTanitma.cs" />
+    <Compile Include="Models\Sinif\YapilanPSayisi.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rol\AdminRolEkle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminPanel\css\AnaKod4.css" />
+    <Content Include="AdminPanel\css\assets\coloredbg.html" />
+    <Content Include="AdminPanel\css\assets\gridtile.html" />
+    <Content Include="AdminPanel\css\assets\gridtile_3x3.html" />
+    <Content Include="AdminPanel\css\assets\gridtile_3x3_white.html" />
+    <Content Include="AdminPanel\css\assets\gridtile_white.html" />
+    <Content Include="AdminPanel\css\bootstrap-grid.css" />
+    <Content Include="AdminPanel\css\icons.css" />
+    <Content Include="AdminPanel\css\ihtiyaciniblrt.css" />
+    <Content Include="AdminPanel\css\images\geocoder.html" />
+    <Content Include="AdminPanel\css\images\layers-2x.html" />
+    <Content Include="AdminPanel\css\images\layers.html" />
+    <Content Include="AdminPanel\css\images\marker-icon.html" />
+    <Content Include="AdminPanel\css\images\throbber.html" />
+    <Content Include="AdminPanel\css\img\loading.html" />
+    <Content Include="AdminPanel\css\invoice.css" />
+    <Content Include="AdminPanel\css\main-color.css" />
+    <Content Include="AdminPanel\css\plugins\closedhand.html" />
+    <Content Include="AdminPanel\css\plugins\openhand.html" />
+    <Content Include="AdminPanel\css\plugins\revolutionslider.css" />
+    <Content Include="AdminPanel\css\sss.css" />
+    <Content Include="AdminPanel\css\style.css" />
+    <Content Include="AdminPanel\css\style2.css" />
+    <Content Include="AdminPanel\css\tumhizmet.css" />
+    <Content Include="AdminPanel\fonts\fontawesome-webfont5b62.html" />
+    <Content Include="AdminPanel\fonts\fontawesome-webfont5b62.svg" />
+    <Content Include="AdminPanel\fonts\fontello.svg" />
+    <Content Include="AdminPanel\fonts\iconsmindca27.svg" />
+    <Content Include="AdminPanel\fonts\simple-line-iconsc05f.svg" />
+    <Content Include="AdminPanel\images\Guwanç.jpg" />
+    <Content Include="AdminPanel\scripts\chosen.min.js" />
+    <Content Include="AdminPanel\scripts\counterup.min.js" />
+    <Content Include="AdminPanel\scripts\custom.js" />
+    <Content Include="AdminPanel\scripts\daterangepicker.js" />
+    <Content Include="AdminPanel\scripts\dropzone.js" />
+    <Content Include="AdminPanel\scripts\extensions\revolution.extension.actions.min.js" />
+    <Content Include="AdminPanel\scripts\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="AdminPanel\scripts\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="AdminPanel\scripts\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="AdminPanel\scripts\extensions\revolution.extension.migration.min.js" />
+    <Content Include="AdminPanel\scripts\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="AdminPanel\scripts\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="AdminPanel\scripts\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="AdminPanel\scripts\extensions\revolution.extension.video.min.js" />
+    <Content Include="AdminPanel\scripts\infobox.min.js" />
+    <Content Include="AdminPanel\scripts\isotope.min.js" />
+    <Content Include="AdminPanel\scripts\jquery-3.4.1.min.js" />
+    <Content Include="AdminPanel\scripts\jquery-migrate-3.1.0.min.js" />
+    <Content Include="AdminPanel\scripts\jquery-ui.min.js" />
+    <Content Include="AdminPanel\scripts\jquery.countdown.min.js" />
+    <Content Include="AdminPanel\scripts\leaflet-autocomplete.js" />
+    <Content Include="AdminPanel\scripts\leaflet-control-geocoder.js" />
+    <Content Include="AdminPanel\scripts\leaflet-gesture-handling.min.js" />
+    <Content Include="AdminPanel\scripts\leaflet-listeo.js" />
+    <Content Include="AdminPanel\scripts\leaflet-markercluster.min.js" />
+    <Content Include="AdminPanel\scripts\leaflet.min.js" />
+    <Content Include="AdminPanel\scripts\magnific-popup.min.js" />
+    <Content Include="AdminPanel\scripts\maps.js" />
+    <Content Include="AdminPanel\scripts\markerclusterer.js" />
+    <Content Include="AdminPanel\scripts\mmenu.min.js" />
+    <Content Include="AdminPanel\scripts\moment.min.js" />
+    <Content Include="AdminPanel\scripts\quantityButtons.js" />
+    <Content Include="AdminPanel\scripts\rangeslider.min.js" />
+    <Content Include="AdminPanel\scripts\slick.min.js" />
+    <Content Include="AdminPanel\scripts\switcher.js" />
+    <Content Include="AdminPanel\scripts\themepunch.revolution.min.js" />
+    <Content Include="AdminPanel\scripts\themepunch.tools.min.js" />
+    <Content Include="AdminPanel\scripts\tooltips.min.js" />
+    <Content Include="AdminPanel\scripts\typed.js" />
+    <Content Include="AdminPanel\scripts\waypoints.min.js" />
+    <Content Include="Content\Alert\package\dist\sweetalert2.all.js" />
+    <Content Include="Content\Alert\package\dist\sweetalert2.all.min.js" />
+    <Content Include="Content\Alert\package\dist\sweetalert2.css" />
+    <Content Include="Content\Alert\package\dist\sweetalert2.js" />
+    <Content Include="Content\Alert\package\dist\sweetalert2.min.css" />
+    <Content Include="Content\Alert\package\dist\sweetalert2.min.js" />
+    <Content Include="Content\Alert\package\src\constants.js" />
+    <Content Include="Content\Alert\package\src\globalState.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\buttons-handlers.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\close.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\enable-disable-elements.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\getInput.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\hideLoading.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\keydown-handler.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\popup-click-handler.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\progress-steps.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\update.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\validation-message.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\_destroy.js" />
+    <Content Include="Content\Alert\package\src\instanceMethods\_main.js" />
+    <Content Include="Content\Alert\package\src\privateMethods.js" />
+    <Content Include="Content\Alert\package\src\privateProps.js" />
+    <Content Include="Content\Alert\package\src\staticMethods.js" />
+    <Content Include="Content\Alert\package\src\staticMethods\argsToParams.js" />
+    <Content Include="Content\Alert\package\src\staticMethods\bindClickHandler.js" />
+    <Content Include="Content\Alert\package\src\staticMethods\dom.js" />
+    <Content Include="Content\Alert\package\src\staticMethods\fire.js" />
+    <Content Include="Content\Alert\package\src\staticMethods\mixin.js" />
+    <Content Include="Content\Alert\package\src\staticMethods\showLoading.js" />
+    <Content Include="Content\Alert\package\src\staticMethods\timer.js" />
+    <Content Include="Content\Alert\package\src\SweetAlert.js" />
+    <Content Include="Content\Alert\package\src\sweetalert2.js" />
+    <Content Include="Content\Alert\package\src\utils\aria.js" />
+    <Content Include="Content\Alert\package\src\utils\classes.js" />
+    <Content Include="Content\Alert\package\src\utils\defaultInputValidators.js" />
+    <Content Include="Content\Alert\package\src\utils\DismissReason.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\animationEndEvent.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\domUtils.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\getters.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\index.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\init.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\inputUtils.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\measureScrollbar.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\parseHtmlToContainer.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\render.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\renderActions.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\renderCloseButton.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\renderContainer.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\renderContent.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\renderFooter.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\renderIcon.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\renderImage.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\renderInput.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\renderPopup.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\renderProgressSteps.js" />
+    <Content Include="Content\Alert\package\src\utils\dom\renderers\renderTitle.js" />
+    <Content Include="Content\Alert\package\src\utils\getTemplateParams.js" />
+    <Content Include="Content\Alert\package\src\utils\iosFix.js" />
+    <Content Include="Content\Alert\package\src\utils\isNodeEnv.js" />
+    <Content Include="Content\Alert\package\src\utils\openPopup.js" />
+    <Content Include="Content\Alert\package\src\utils\params.js" />
+    <Content Include="Content\Alert\package\src\utils\scrollbarFix.js" />
+    <Content Include="Content\Alert\package\src\utils\setParameters.js" />
+    <Content Include="Content\Alert\package\src\utils\Timer.js" />
+    <Content Include="Content\Alert\package\src\utils\utils.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\WebigemDesign\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js" />
+    <Content Include="Content\WebigemDesign\main\default\404.html" />
+    <Content Include="Content\WebigemDesign\main\default\about.html" />
+    <Content Include="Content\WebigemDesign\main\default\assets\css\animate.min.css" />
+    <Content Include="Content\WebigemDesign\main\default\assets\css\bootstrap.min.css" />
+    <Content Include="Content\WebigemDesign\main\default\assets\css\boxicons.min.css" />
+    <Content Include="Content\WebigemDesign\main\default\assets\css\magnific-popup.min.css" />
+    <Content Include="Content\WebigemDesign\main\default\assets\css\meanmenu.min.css" />
+    <Content Include="Content\WebigemDesign\main\default\assets\css\owl.carousel.min.css" />
+    <Content Include="Content\WebigemDesign\main\default\assets\css\owl.theme.default.min.css" />
+    <Content Include="Content\WebigemDesign\main\default\assets\css\owl.video.play.html" />
+    <Content Include="Content\WebigemDesign\main\default\assets\css\responsive.css" />
+    <Content Include="Content\WebigemDesign\main\default\assets\css\style.css" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\boxiconsd41d.svg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\flaticon.css" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\Flaticon.svg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\about\1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\about\2.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\about\3.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\about\bg-shape.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\about\s-1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\about\s-2.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\blog\1.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\blog\2.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\blog\3.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\blog\4.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\blog\5.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\blog\6.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\blog\blog-dtls.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\brand\1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\brand\2.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\brand\3.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\brand\4.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\brand\5.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\counter-bg.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\faq\1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\faq\2.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\faq\shape-3.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\faq\shape-4.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\faq\shape-5.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\faq\shape-6.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\favicon.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\home-2\1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\home-2\dots.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\home-2\home-bg.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\home1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\home3.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\inner-banner\1.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\inner-banner\2.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\inner-banner\3.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\inner-banner\4.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\inner-banner\5.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\inner-banner\6.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\inner-banner\7.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\inner-banner\8.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\member\1.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\member\2.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\member\3.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\member\4.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\member\5.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\member\6.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\member\7.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\member\8.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\portfolio\1.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\portfolio\2.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\portfolio\3.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\portfolio\4.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\portfolio\5.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\portfolio\6.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\service-icon\1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\service-icon\2.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\service-icon\3.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\service-icon\4.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\service-icon\5.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\service-icon\6.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\service-icon\card-shape-2.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\service-icon\card-shape.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\service-icon\service-dtls.jpg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\2.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\3.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\4.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\5.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\6.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\about-shape1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\bg-shape-home3.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\counter-shape-1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\footer-shape.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\home1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\instagram.svg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\member-shape-1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\member-shape-2.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\pinterest.svg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\price-shape.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\right-side.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\shape-1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\shape-home3.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\submition-shape1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\submition-shape2.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\twitter.svg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\shape\youtube.svg" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\testimonial\1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\testimonial\shape-bg.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\testimonial\shape-left.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\testimonial\shape-right.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\testimonial\t1.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\testimonial\t2.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\testimonial\t3.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\testimonial\t4.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\testimonial\t5.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\img\testimonial\t6.png" />
+    <Content Include="Content\WebigemDesign\main\default\assets\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\WebigemDesign\main\default\assets\js\contact-form-script.js" />
+    <Content Include="Content\WebigemDesign\main\default\assets\js\custom.js" />
+    <Content Include="Content\WebigemDesign\main\default\assets\js\form-validator.min.js" />
+    <Content Include="Content\WebigemDesign\main\default\assets\js\jquery-3.5.0.min.js" />
+    <Content Include="Content\WebigemDesign\main\default\assets\js\jquery.ajaxchimp.min.js" />
+    <Content Include="Content\WebigemDesign\main\default\assets\js\jquery.magnific-popup.min.js" />
+    <Content Include="Content\WebigemDesign\main\default\assets\js\meanmenu.min.js" />
+    <Content Include="Content\WebigemDesign\main\default\assets\js\owl.carousel.min.js" />
+    <Content Include="Content\WebigemDesign\main\default\assets\js\wow.min.js" />
+    <Content Include="Content\WebigemDesign\main\default\blog-details.html" />
+    <Content Include="Content\WebigemDesign\main\default\blog.html" />
+    <Content Include="Content\WebigemDesign\main\default\contact.html" />
+    <Content Include="Content\WebigemDesign\main\default\faq.html" />
+    <Content Include="Content\WebigemDesign\main\default\index-three.html" />
+    <Content Include="Content\WebigemDesign\main\default\index-two.html" />
+    <Content Include="Content\WebigemDesign\main\default\index.html" />
+    <Content Include="Content\WebigemDesign\main\default\log-in.html" />
+    <Content Include="Content\WebigemDesign\main\default\members.html" />
+    <Content Include="Content\WebigemDesign\main\default\portfolio.html" />
+    <Content Include="Content\WebigemDesign\main\default\pricing.html" />
+    <Content Include="Content\WebigemDesign\main\default\privacy-policy.html" />
+    <Content Include="Content\WebigemDesign\main\default\recover-password.html" />
+    <Content Include="Content\WebigemDesign\main\default\service-details.html" />
+    <Content Include="Content\WebigemDesign\main\default\services.html" />
+    <Content Include="Content\WebigemDesign\main\default\sign-in.html" />
+    <Content Include="Content\WebigemDesign\main\default\sign-up.html" />
+    <Content Include="Content\WebigemDesign\main\default\terms-condition.html" />
+    <Content Include="Content\WebigemDesign\main\default\testimonial.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Resimler\paket.jpg" />
+    <Content Include="Resimler\webigembeyazlogo.png" />
+    <Content Include="Resimler\WEBİGEM.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Alert\package\CHANGELOG.md" />
+    <Content Include="Content\Alert\package\LICENSE" />
+    <Content Include="Content\Alert\package\package.json" />
+    <Content Include="Content\Alert\package\src\scss\_animations.scss" />
+    <Content Include="Content\Alert\package\src\scss\_body.scss" />
+    <Content Include="Content\Alert\package\src\scss\_core.scss" />
+    <Content Include="Content\Alert\package\src\scss\_mixins.scss" />
+    <Content Include="Content\Alert\package\src\scss\_theming.scss" />
+    <Content Include="Content\Alert\package\src\scss\_toasts-animations.scss" />
+    <Content Include="Content\Alert\package\src\scss\_toasts-body.scss" />
+    <Content Include="Content\Alert\package\src\scss\_toasts.scss" />
+    <Content Include="Content\Alert\package\src\sweetalert2.scss" />
+    <Content Include="Content\Alert\package\src\variables.scss" />
+    <Content Include="AdminPanel\fonts\fontawesome-webfont5b62.eot" />
+    <Content Include="AdminPanel\fonts\fontawesome-webfont5b62.ttf" />
+    <Content Include="AdminPanel\fonts\fontawesome-webfont5b62.woff" />
+    <Content Include="AdminPanel\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="AdminPanel\fonts\fontello.eot" />
+    <Content Include="AdminPanel\fonts\fontello.ttf" />
+    <Content Include="AdminPanel\fonts\fontello.woff" />
+    <Content Include="AdminPanel\fonts\iconsmindca27.eot" />
+    <Content Include="AdminPanel\fonts\iconsmindca27.ttf" />
+    <Content Include="AdminPanel\fonts\iconsmindca27.woff" />
+    <Content Include="AdminPanel\fonts\iconsmindd41d.eot" />
+    <Content Include="AdminPanel\fonts\simple-line-iconsc05f.eot" />
+    <Content Include="AdminPanel\fonts\simple-line-iconsc05f.ttf" />
+    <Content Include="AdminPanel\fonts\simple-line-iconsc05f.woff" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\boxicons.eot" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\boxicons.ttf" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\boxicons.woff" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\boxicons.woff2" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\Flaticon.eot" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\Flaticon.ttf" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\Flaticon.woff" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\Flaticon.woff2" />
+    <Content Include="Content\WebigemDesign\main\default\assets\fonts\Flaticond41d.eot" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Default\Referanslar.cshtml" />
+    <Content Include="Views\Default\AnaHizmet.cshtml" />
+    <Content Include="Views\Default\ProjeCalismaSureci.cshtml" />
+    <Content Include="Views\Default\TammlananPSayisi.cshtml" />
+    <Content Include="Views\Default\MMusteriYorumu.cshtml" />
+    <Content Include="Views\Default\OneCikanBlok1.cshtml" />
+    <Content Include="Views\Default\Hakkimizda.cshtml" />
+    <Content Include="Views\Default\iletisim.cshtml" />
+    <Content Include="Views\Default\iletisimBilgi.cshtml" />
+    <Content Include="Views\Default\BizimTakim.cshtml" />
+    <Content Include="Views\Default\SSS.cshtml" />
+    <Content Include="Views\Default\KVKK.cshtml" />
+    <Content Include="Views\Default\Bloglar.cshtml" />
+    <Content Include="Views\Default\BlogDetay.cshtml" />
+    <Content Include="Views\Default\TumHizmetler.cshtml" />
+    <Content Include="Views\Default\HizmetDetay.cshtml" />
+    <Content Include="Views\Default\FormSayfasi.cshtml" />
+    <Content Include="Views\Error\PageError.cshtml" />
+    <Content Include="Views\Shared\Admin_Layaout.cshtml" />
+    <Content Include="Views\Admin\AdminIndex.cshtml" />
+    <Content Include="Views\Admin\AdminPaket.cshtml" />
+    <Content Include="Views\MPanel\Index.cshtml" />
+    <Content Include="Views\Admin\MusteriKaydi.cshtml" />
+    <Content Include="Views\Admin\AdiminHakYazi.cshtml" />
+    <Content Include="Views\Admin\AdminHakGetir.cshtml" />
+    <Content Include="Views\Admin\AdminBlog.cshtml" />
+    <Content Include="Views\Admin\AdminBEkle.cshtml" />
+    <Content Include="Views\Admin\AdminBGetir.cshtml" />
+    <Content Include="Views\Admin\AdminHizFormNot.cshtml" />
+    <Content Include="Views\Admin\AdminHizFormNotDetay.cshtml" />
+    <Content Include="Views\Admin\AdminHizFormNotYazdir.cshtml" />
+    <Content Include="Views\Admin\AdminHizForm.cshtml" />
+    <Content Include="Views\Admin\AdminHiFormGetir.cshtml" />
+    <Content Include="Views\Admin\AdmHizmetler.cshtml" />
+    <Content Include="Views\Admin\AdmHizEkle.cshtml" />
+    <Content Include="Views\Admin\AdminHizmetGetir.cshtml" />
+    <Content Include="Views\Admin\AdminSlider.cshtml" />
+    <Content Include="Views\Admin\AdminSEkle.cshtml" />
+    <Content Include="Views\Admin\AdminSGetir.cshtml" />
+    <Content Include="Views\Admin\AdminNedenBiz.cshtml" />
+    <Content Include="Views\Admin\AdmNedenBizGtr.cshtml" />
+    <Content Include="Views\Admin\AdminPortfoil.cshtml" />
+    <Content Include="Views\Admin\AdmPortEkle.cshtml" />
+    <Content Include="Views\Admin\AdmPortGetr.cshtml" />
+    <Content Include="Views\Admin\AdmTakim.cshtml" />
+    <Content Include="Views\Admin\AdmTakimEkle.cshtml" />
+    <Content Include="Views\Admin\AdmTakGetr.cshtml" />
+    <Content Include="Views\Admin\AdmtopYapilanp.cshtml" />
+    <Content Include="Views\Admin\AdmYapProjeGetr.cshtml" />
+    <Content Include="Views\Admin\AdmMutMusYorum.cshtml" />
+    <Content Include="Views\Admin\AdmMutMusEkle.cshtml" />
+    <Content Include="Views\Admin\AdmMutMusGetr.cshtml" />
+    <Content Include="Views\Admin\AdmReferans.cshtml" />
+    <Content Include="Views\Admin\AdmRefEkle.cshtml" />
+    <Content Include="Views\Admin\AdmRefGetr.cshtml" />
+    <Content Include="Views\Admin\AdmiletsmBilgi.cshtml" />
+    <Content Include="Views\Admin\AdmiltGetr.cshtml" />
+    <Content Include="Views\Admin\AdmiletsmGMesaj.cshtml" />
+    <Content Include="Views\Admin\AdmMesjGetr.cshtml" />
+    <Content Include="Views\Admin\AdmWebSiTanitma.cshtml" />
+    <Content Include="Views\Admin\AdmWebSGetir.cshtml" />
+    <Content Include="Views\Admin\Adminkullanici.cshtml" />
+    <Content Include="Views\Admin\AdminKulEkle.cshtml" />
+    <Content Include="Views\Admin\AdminKulGetr.cshtml" />
+    <Content Include="Views\Admin\AdminKVKK.cshtml" />
+    <Content Include="Views\Admin\AdminKVKKEkle.cshtml" />
+    <Content Include="Views\Admin\AdminKVKKGetr.cshtml" />
+    <Content Include="Views\Admin\AdminSSS.cshtml" />
+    <Content Include="Views\Admin\AdminSSSEkle.cshtml" />
+    <Content Include="Views\Admin\AdminSSSGetr.cshtml" />
+    <Content Include="Views\Admin\AdminPEkle.cshtml" />
+    <Content Include="Views\Admin\AdminPGetir.cshtml" />
+    <Content Include="Views\Admin\AdminHizFormNotGir.cshtml" />
+    <Content Include="Views\Default\Paketler.cshtml" />
+    <Content Include="Views\Admin\AdmWebSiTanitmaEkle.cshtml" />
+    <Content Include="Views\Admin\AdmProjeCalismaSureci.cshtml" />
+    <Content Include="Views\Admin\AdmProjeCalismaSureciEkle.cshtml" />
+    <Content Include="Views\Admin\AdmProjeCalismaSureciGetir.cshtml" />
+    <Content Include="Views\Default\TammlananPSayisi2.cshtml" />
+    <Content Include="Views\Default\HakkimizdaPart.cshtml" />
+    <Content Include="Views\Default\HakkimizdaPart1.cshtml" />
+    <Content Include="Views\Default\ProjelerPart.cshtml" />
+    <Content Include="Views\Default\DigerHizmetler.cshtml" />
+    <Content Include="Views\Default\BlogArsivPartial.cshtml" />
+    <Content Include="Views\Default\PopulerBlogPartial.cshtml" />
+    <Content Include="Views\Default\Projeler.cshtml" />
+    <Content Include="Views\Default\iletisimBilgiFooter.cshtml" />
+    <Content Include="Views\Default\HakkimizdaFooter.cshtml" />
+    <Content Include="Views\Default\iletisimBilgiHeader.cshtml" />
+    <Content Include="Views\MPanel\SifreResetA.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Resim\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202204060056160_vaidation.resx">
+      <DependentUpon>202204060056160_vaidation.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57173</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44318/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

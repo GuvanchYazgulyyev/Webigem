@@ -1,0 +1,135 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!doctype html>
+<html lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/magnific-popup.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/animate.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/fonts/flaticon.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/meanmenu.min.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/style.css">
+
+    <link rel="stylesheet" href="~/Content/WebigemDesign/main/default/assets/css/responsive.css">
+    <link rel="icon" type="image/png" href="~/Content/WebigemDesign/main/default/assets/img/favicon.png">
+
+    <title>Admin Panel</title>
+</head>
+<body>
+
+
+    
+
+
+    <section class="sign-in-area ptb-100">
+        <div class="container">
+            <div class="section-title text-center">
+                <span>Giriş Yap</span>
+                <h2>
+                    Hesabınıza giriş yapın!
+                </h2>
+              
+            </div>
+            <div class="contact-wrap-form log-in-width">
+                @using (Html.BeginForm("AdminLogin", "MPanel", FormMethod.Post))
+                {
+                    @ViewBag.Message
+                <form method="post">
+
+                    @if (TempData["mesaj"] != null)
+                    {
+                        <span class="alert alert-danger" style="font-size:12px;">@TempData["mesaj"]</span>
+                        <br />
+                        <br />
+                    }
+
+
+                    @if (TempData["sifreyenile"] != null)
+                    {
+                        <span class="alert alert-success" style="font-size:12px;">@TempData["sifreyenile"]</span>
+                        <br />
+                        <br />
+                    }
+
+                    <div class="row">
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="EPosta" placeholder="E Posta Adresiniz Giriniz!">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <input class="form-control" type="password" name="Sifre" placeholder="Şifrenizi Giriniz">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 form-condition">
+                            <div class="agree-label">
+                                <input type="checkbox" id="chb1">
+                                <label for="chb1">
+                                    Beni Hatırla
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <a class="forget" href="/MPanel/SifreResetA">Şifremi Unuttum?</a>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button class="default-btn btn-two" type="submit">
+                                Giriş Yap
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+                }
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="~/Content/WebigemDesign/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="~/Content/WebigemDesign/main/default/assets/js/jquery-3.5.0.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/meanmenu.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/owl.carousel.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/jquery.magnific-popup.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/wow.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/form-validator.min.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/contact-form-script.js"></script>
+
+    <script src="~/Content/WebigemDesign/main/default/assets/js/custom.js"></script>
+</body>
+
+</html>

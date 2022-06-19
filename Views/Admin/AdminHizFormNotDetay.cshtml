@@ -1,0 +1,102 @@
+﻿@using MyProject.Models.Sinif
+@model List<HizmetForm>
+@{
+    ViewBag.Title = "AdminHizFormNotDetay";
+    Layout = "~/Views/Shared/Admin_Layaout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div class="row sticky-wrapper" style="margin-top:-30px" ;>
+        @foreach (var x in Model)
+        {
+            <div class="col-md-12">
+
+                <!-- Titlebar -->
+
+                <div id="titlebar" class="listing-titlebar">
+                    <div class="listing-titlebar-title">
+                        <h2>@x.AdSoyad <span class="listing-tag">@x.ProjeBaslik</span></h2>
+                        <div class="col-md-12">
+                            <i class="fa fa-sort-numeric-desc"></i> Referans Kodu: @x.TakipKodu <br />
+                            <i class="fa fa-times"></i>Tarih :  @Convert.ToDateTime(x.Tarih).ToString("dd/MMM/yyyy") <br />
+                            @*<i class="fa fa-joomla"></i>Kategori : <br />*@
+                        </div>
+
+                        <!--<div class="col-md-6" style="margin-bottom:20px;">-->
+                        @*<i class="fa fa-user"></i>Hizmet :  <br />*@
+                        <!--Buraya tarş,ih Eklenecek-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <!-- Overview -->
+                <div id="listing-overview" class="listing-section">
+                    <!-- Description -->
+                    <p>
+                        @x.ileti
+                    </p>
+                    <!-- Listing Contacts -->
+                    <div class="listing-links-container">
+
+                        <ul class="listing-links contact-links">
+                            <li><a href="tel:@x.TelNo" class="listing-links"><i class="fa fa-phone"></i>@x.TelNo</a></li>
+                            <li>
+                                <a href="mailto:@x.EPosta" class="listing-links">
+                                    <i class="fa fa-envelope-o"></i> <span class="__cf_email__">@x.EPosta</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+
+            </div>
+        }
+        <!-- Reviews -->
+        <div class="clearfix"></div>
+
+        <section class="comments listing-reviews" style="margin-top:50px;">
+            <h2>Personel Notları</h2>
+            @Html.Action("AdminHizFormNotGir", "Admin")
+
+        </section>
+
+        <!-- Pagination -->
+        <div class="clearfix"></div>
+
+
+        <!-- Pagination / End -->
+        <!-- Add Review Box -->
+        <div id="add-review" class="add-review-box" style="margin-top:-10px" ;>
+
+            <!-- Add Review -->
+            @*<h3 class="listing-desc-headline margin-bottom-10">Not Eklemek İster Misiniz?</h3>*@
+            <p class="comment-notes">Bu Hizmet ile İlgili Notlarınızı Buraya Ekleyiniz!</p>
+            @Html.Action("AdminHizFormNotYazdir", "Admin")
+
+
+
+        </div>
+        <!-- Add Review Box / End -->
+
+
+    </div>
+
+
+
+
+    <div id="backtotop"><a href="#"></a></div>
+
+
+
+
+</body>
+
+</html>
