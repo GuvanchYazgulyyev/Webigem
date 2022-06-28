@@ -20,17 +20,21 @@
                             <a href="~/Default/BlogDetay/@x.id"><span>@Html.ActionLink(x.Baslik, "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</span></a>
                         </div>*@
                     <a href="~/Default/BlogDetay/@x.id">
-                        <h3>@Html.ActionLink(x.Baslik, "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</h3>
+                        <h6>@Html.ActionLink(x.Baslik, "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</h6>
                     </a>
-                    <a href="~/Default/BlogDetay/@x.id" class="read-btn">@Html.ActionLink("İncele", "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</a>
+                    <p style="font-size:14px;">
+                        <a href="~/Default/BlogDetay/@x.id" class="read-btn">@Html.ActionLink("İncele", "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</a>
+                    </p>
                 }
                 else
                 {
 
                     <a href="~/Default/BlogDetay/@x.id">
-                        <h3>@Html.ActionLink(x.Baslik, "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</h3>
+                        <h6>@Html.ActionLink(x.Baslik, "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</h6>
                     </a>
-                    <a href="~/Default/BlogDetay/@x.id" class="read-btn">@Html.ActionLink("İncele", "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</a>
+                    <p style="font-size:14px;">
+                        <a href="~/Default/BlogDetay/@x.id" class="read-btn">@Html.ActionLink("İncele", "BlogDetay", new { id = x.id, ara4 = Seo.AdresDuzenle(x.Baslik) })</a>
+                    </p>
                 }
             </div>
         </div>
