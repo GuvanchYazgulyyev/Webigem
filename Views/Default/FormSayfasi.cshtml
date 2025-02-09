@@ -14,18 +14,18 @@
     <meta name="theme-color" content="#2c2c2c">
     <meta name="msapplication-navbutton-color" content="#2c2c2c">
     <meta name="apple-mobile-web-app-status-bar-style" content="#2c2c2c">
-    <title>Talep Oluştur, webigem Yazılım Şirketi</title>
+    <title>Ankara'nın En İyi Yazılım Şirketi | Webigem Yazılım Hizmetleri</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="index, follow" />
-    <meta name="keywords" content="talep olustur, web yazılım,yazilim,web tasarım,grafik tasarım,e-ticaret,seo,site bakımı,talep oluştur" />
-    <meta name="description" content="2018'den beri kurumsal firmaların müşterilerine ulaşmalarına yardımcı oluyoruz. WEBIGEM olarak; hızla gelişen teknolojiyi takip ederek firmaların ihtiyaçları doğrultusunda, güncel teknolojilerle çözümler sunuyoruz." />
+    <meta name="keywords" content="ankara yazılım şirketi, ankara web tasarım, ankara yazılım hizmetleri, e-ticaret yazılımı, seo hizmetleri, web yazılım, yazılım geliştirme, mobil uygulama geliştirme, kurumsal yazılım çözümleri, site bakımı, grafik tasarım, ankara yazılım firmaları, webigem" />
+    <meta name="description" content="Webigem, Ankara'nın ve Türkiye'nin önde gelen yazılım şirketidir. Web tasarım, e-ticaret, mobil uygulama geliştirme, SEO ve kurumsal yazılım çözümleri ile işletmenizi bir sonraki seviyeye taşıyoruz. 2018'den beri güncel teknolojilerle hizmet veriyoruz." />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="publisher" content="webigem.com" />
     <meta name="copyright" content="webigem ®" />
     <meta name="date-creation-yyyy" content="2021" />
-    <meta name="classification" content="Machine" />
-    <meta name="author" content="2018'den beri kurumsal firmaların müşterilerine ulaşmalarına yardımcı oluyoruz" />
+    <meta name="classification" content="Software Company" />
+    <meta name="author" content="Webigem Yazılım Şirketi" />
     <meta name="rating" content="all" />
     <meta name="expires" content="no" />
     <meta name="language" content="TR" />
@@ -45,19 +45,26 @@
     <meta name="RATING" content="GENERAL" />
     <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="webigem Software Company E-commerce website construction & Service 7/24 Opening" />
-    <meta property="og:url" content="https://webigem.com/" />
-    <meta property="og:title" content="webigem Software Company E-commerce website construction & Service 7/24 opening" />
-    <meta property="og:description" content="webigem Software Company E-commerce website construction & Service 7/24 opening" />
+    <meta property="og:site_name" content="Webigem Yazılım Şirketi | Ankara'nın En İyi Yazılım Hizmetleri" />
+    <meta property="og:url" content="https://webigem.com.tr/" />
+    <meta property="og:title" content="Ankara'nın En İyi Yazılım Şirketi | Webigem Yazılım Hizmetleri" />
+    <meta property="og:description" content="Webigem, Ankara'nın ve Türkiye'nin önde gelen yazılım şirketidir. Web tasarım, e-ticaret, mobil uygulama geliştirme, SEO ve kurumsal yazılım çözümleri ile işletmenizi bir sonraki seviyeye taşıyoruz." />
     <meta property="og:image" content="~/Resimler/WEBİGEM.png" />
-    <link rel="canonical" href="https://webigem.com/" />
+    <link rel="canonical" href="https://webigem.com.tr/" />
     <!-- favicon icon -->
     <link rel="shortcut icon" href="~/Resimler/WEBİGEM.png">
     <link rel="apple-touch-icon" href="~/Resimler/WEBİGEM.png">
     <link rel="apple-touch-icon" sizes="72x72" href="~/Resimler/WEBİGEM.png">
     <link rel="apple-touch-icon" sizes="114x114" href="~/Resimler/WEBİGEM.png">
     <link rel="icon" type="image/png" href="~/Content/WebigemDesign/main/default/assets/img/favicon.png">
-
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <link href="~/Content/Alert/package/dist/sweetalert2.min.css" rel="stylesheet" />
+        <script src="~/Content/Alert/package/dist/sweetalert2.min.js"></script>
+        <script>
+            Swal.fire("webigem.com.tr", "Hata Oluştu Lütfen Bilgileri Eksiksiz Doldurunuz!", 'warning');
+        </script>
+    }
 </head>
 <body>
     <div class="inner-banner inner-bg6">
@@ -65,102 +72,77 @@
             <div class="inner-title text-center">
                 <h3>Talep Oluştur</h3>
                 <ul>
-                    <li>
-                        <a href="/">Ana Sayfa</a>
-                    </li>
-                    <li>
-                        <i class='bx bxs-chevrons-right'></i>
-                    </li>
+                    <li><a href="/">Ana Sayfa</a></li>
+                    <li><i class='bx bxs-chevrons-right'></i></li>
                     <li>Talep Oluştur</li>
                 </ul>
             </div>
         </div>
     </div>
 
-
-
-    <br />
-
     <section class="contact-section pb-100">
         <div class="container">
             <div class="section-title text-center">
                 <h2>Talebinizi Oluşturun</h2>
-                <p>
-                    Değerli müşterimiz aşağıdaki formu doldurarak talebinizi oluşturup bize iletebilirsiniz.
-
-                </p>
+                <p>Aşağıdaki formu doldurarak talebinizi iletebilirsiniz.</p> 
             </div>
             <div class="contact-wrap pt-45">
                 <div class="contact-wrap-form">
-                    @using (Html.BeginForm("FormSayfasi", "Default", FormMethod.Post))
+                    @using (Html.BeginForm("FormSayfasi", "Default", FormMethod.Post, new { id = "form" }))
                     {
-                        <form id="contactForm">
-                            <div class="row">
-                                @Html.AntiForgeryToken()
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="form-group">
-                                        @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control", placeholder = "Ad Soyadınız!!!", required = "" })
-                                        @Html.ValidationMessageFor(x => x.AdSoyad, "", new { @style = "color:red" })
-                                        @*<input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name">*@
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="form-group">
-                                        @Html.TextBoxFor(x => x.EPosta, new { @class = "form-control", type = "email", placeholder = "E Posta Adresiniz!!!", required = "" })
-                                        @Html.ValidationMessageFor(x => x.EPosta, "", new { @style = "color:red" })
-                                        @*<input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email">*@
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="form-group">
-                                        @Html.TextBoxFor(x => x.TelNo, new { @class = "form-control", type = "tel", placeholder = "Telefon No!!!", required = "" })
-                                        @Html.ValidationMessageFor(x => x.TelNo, "", new { @style = "color:red" })
-                                        @*<input type="tel" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Your Phone">*@
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <input class="form-control" type="text" name="TakipKodu" readonly hidden="hidden" value="@ViewBag.takipkod">
-
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="form-group">
-                                        @Html.TextBoxFor(x => x.ProjeBaslik, new { @class = "form-control", placeholder = "Proje Başlığı!!!", required = "" })
-                                        @Html.ValidationMessageFor(x => x.ProjeBaslik, "", new { @style = "color:red" })
-                                        @*<input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Your Subject">*@
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="form-group">
-                                        @*@Html.DropDownListFor(x => x.Hizmetid, (List<SelectListItem>)ViewBag.dgr2, "Hizmet Seçiniz", new { @style = "form-control" })*@
-                                        @Html.DropDownListFor(x => x.Hizmetid, (List<SelectListItem>)ViewBag.dgr2, "Hizmet Seçiniz", new { @class = "form-control" })
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="form-group">
-                                        @Html.TextAreaFor(x => x.ileti, new { @class = "form-control", cols = "30", rows = "8", placeholder = "Mesajınız", required = "" })
-                                        @Html.ValidationMessageFor(x => x.ileti, "", new { @style = "color:red" })
-@*<textarea name="ileti" class="form-control" id="ileti" cols="30" rows="8" required data-error="Mesajı Boş Bırakmayın" placeholder="Mesajınız"></textarea>*@
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 text-center">
-                                    <button type="submit" class="default-btn page-btn text-center">
-                                        Mesaj Gönder
-                                    </button>
-                                    <div class="clearfix"></div>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control", id = "AdSoyad", placeholder = "Ad Soyadınız" })
+                                    @Html.ValidationMessageFor(x => x.AdSoyad, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                        </form>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.EPosta, new { @class = "form-control", id = "EPosta", type = "email", placeholder = "E-Posta Adresiniz" })
+                                    @Html.ValidationMessageFor(x => x.EPosta, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.TelNo, new { @class = "form-control", id = "TelNo", type = "tel", placeholder = "Telefon Numarası" })
+                                    @Html.ValidationMessageFor(x => x.TelNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <input type="hidden" name="TakipKodu" value="@ViewBag.takipkod" />
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.ProjeBaslik, new { @class = "form-control", id = "ProjeBaslik", placeholder = "Proje Başlığı" })
+                                    @Html.ValidationMessageFor(x => x.ProjeBaslik, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    @*@Html.DropDownListFor(x => x.Hizmetid, (List<SelectListItem>)ViewBag.dgr2, "Hizmet Seçiniz", new { @class = "form-control" })*@
+                                    @Html.DropDownListFor(x => x.Hizmetid, (IEnumerable<SelectListItem>)ViewBag.dgr2, "Hizmet Seçiniz", new { @class = "form-control" })
+
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    @Html.TextAreaFor(x => x.ileti, new { @class = "form-control", id = "ileti", rows = "5", placeholder = "Mesajınız" })
+                                    @Html.ValidationMessageFor(x => x.ileti, "", new { @class = "t ext-danger" })
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 text-center">
+                                <button type="submit" class="default-btn page-btn">Talep Gönder</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
                     }
                 </div>
             </div>
         </div>
     </section>
-
+    <script src="~/Scripts/FormGonderValidation/FormValidation.js"></script>
 </body>
-
 </html>
+
+
 

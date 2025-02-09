@@ -46,11 +46,11 @@
     <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="webigem Software Company E-commerce website construction & Service 7/24 Opening" />
-    <meta property="og:url" content="https://webigem.com/" />
+    <meta property="og:url" content="https://webigem.com.tr/" />
     <meta property="og:title" content="webigem Software Company E-commerce website construction & Service 7/24 opening" />
     <meta property="og:description" content="webigem Software Company E-commerce website construction & Service 7/24 opening" />
     <meta property="og:image" content="~/Resimler/WEBİGEM.png" />
-    <link rel="canonical" href="https://webigem.com/" />
+    <link rel="canonical" href="https://webigem.com.tr/" />
 
 
     @if (TempData["iletisimmesaj"] != null)
@@ -58,7 +58,7 @@
         <link href="~/Content/Alert/package/dist/sweetalert2.min.css" rel="stylesheet" />
         <script src="~/Content/Alert/package/dist/sweetalert2.min.js"></script>
         <script>
-            Swal.fire("webigem.com", "Mesajınız gönderilmiştir!", 'success');
+            Swal.fire("webigem.com.tr", "Mesajınız gönderilmiştir!", 'success');
         </script>
     }
 
@@ -67,7 +67,7 @@
         <link href="~/Content/Alert/package/dist/sweetalert2.min.css" rel="stylesheet" />
         <script src="~/Content/Alert/package/dist/sweetalert2.min.js"></script>
         <script>
-            Swal.fire("webigem.com", "Talebiniz tarafımıza iletilmiştir. En kısa sürede web danışmanlarımız tarafından talebinize cevap verilecektir.", 'success');
+            Swal.fire("webigem.com.tr", "Talebiniz tarafımıza iletilmiştir. En kısa sürede web danışmanlarımız tarafından talebinize cevap verilecektir.", 'success');
         </script>
     }
 </head>
@@ -84,7 +84,7 @@
                                 İşinizi İki Kat Daha Hızlı Artırın
                             </h1>
                             <p>
-                               WEBIGEM olarak; özel yazılım geliştirme, kurumsal web tasarım ve
+                                WEBIGEM olarak; özel yazılım geliştirme, kurumsal web tasarım ve
                                 mobil uygulama geliştirme alanlarında siz değerli müşterilerimize profesyonel destek ve çözümler sunuyoruz.
                             </p>
                             <div class="banner-content-btn">
@@ -190,6 +190,14 @@
         </div>
     </div>
 
+    <div class="brand-area brand-bg" style="padding-top:20px; padding-bottom:20px;">
+        <div class="container">
+            <div class="brand-slider owl-carousel owl-theme">
+                @Html.Action("Referanslar", "Default")
+            </div>
+        </div>
+    </div>
+
     <!--Hizmetler-->
     <section class="service-area pb-70">
         <div class="container">
@@ -204,11 +212,7 @@
                 </p>
             </div>
             <div class="service-slider owl-carousel owl-theme pt-45">
-
                 @Html.Action("AnaHizmet", "Default")
-
-
-
             </div>
         </div>
     </section>
@@ -267,23 +271,23 @@
 
     <section class="portfolio-area portfolio-mt pt-100 pb-70">
         <div class="container">
-                <div class="section-title text-center">
-                    <span>Portföyümüz</span>
-                    <h2>
-                        Onlarca Firmayla İş Yaptık
-                    </h2>
-                    <p>
-                        Müşteri memnuniyetini en önemli ilkemiz olarak benimseyerek çalışma yaptığımız müşteriler ile geliştirme, 
-                        bakım ve destek süreçlerinde güven ve memnuniyet ilişkisini sürdürerek kalitemizden taviz vermiyoruz.
-                    </p>
-                </div>
-                <div class="portfolio-slider pt-45 owl-carousel owl-theme">
-                    @Html.Action("ProjelerPart", "Default")
-
-                    
-
-                </div>
+            <div class="section-title text-center">
+                <span>Portföyümüz</span>
+                <h2>
+                    Onlarca Firmayla İş Yaptık
+                </h2>
+                <p>
+                    Müşteri memnuniyetini en önemli ilkemiz olarak benimseyerek çalışma yaptığımız müşteriler ile geliştirme,
+                    bakım ve destek süreçlerinde güven ve memnuniyet ilişkisini sürdürerek kalitemizden taviz vermiyoruz.
+                </p>
             </div>
+            <div class="portfolio-slider owl-carousel owl-theme">
+                @Html.Action("ProjelerPart", "Default")
+
+
+
+            </div>
+        </div>
     </section>
 
 
@@ -330,8 +334,7 @@
                 <span>Bloglar</span>
                 <h2>Yeni Postlar</h2>
                 <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at its layout.
+                    Güncel Makaleleri Okuyun.
                 </p>
             </div>
             <div class="row pt-45">
@@ -344,18 +347,18 @@
     </div>
 
     <!--Bizi Takip Edin-->
-    @*<div class="subscribe-area ptb-100">
+    <div class="subscribe-area ptb-100">
         <div class="container">
             <div class="subscribe-content">
-                <h2>Subscribe Bonsa for Daily Update</h2>
+                <h2 style="text-align:center;">Yeni Habarleri Takip Edin</h2>
                 <form class="subscribe-form">
-                    <input type="email" class="form-control" placeholder="Enter your email">
+                    <input type="email" class="form-control" placeholder="EPosta Adresiniz...">
                     <button class="submit-btn" type="submit">
-                        Subscribe
+                        Bizi Takip Edin
                     </button>
                 </form>
             </div>
         </div>
-    </div>*@
+    </div>
 </body>
 </html>

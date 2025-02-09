@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -69,6 +69,9 @@
     </Reference>
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
@@ -163,11 +166,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App_Code\Seo.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -180,11 +178,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Heplers\GenerateTakipKodu.cs" />
+    <Compile Include="Heplers\MailHelper.cs" />
     <Compile Include="Migrations\202204060056160_vaidation.cs" />
     <Compile Include="Migrations\202204060056160_vaidation.designer.cs">
       <DependentUpon>202204060056160_vaidation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\HizmetFormGonder.cs" />
     <Compile Include="Models\MailGonder.cs" />
     <Compile Include="Models\Sinif\AdminGiris.cs" />
     <Compile Include="Models\Sinif\AdminYetki.cs" />
@@ -501,6 +502,105 @@
     <Content Include="Resimler\paket.jpg" />
     <Content Include="Resimler\webigembeyazlogo.png" />
     <Content Include="Resimler\WEBİGEM.png" />
+    <Content Include="Resim\1.jpeg" />
+    <Content Include="Resim\1.jpeg.jpeg" />
+    <Content Include="Resim\1.png" />
+    <Content Include="Resim\129513-US DV-2023 Lottery-600x600 px copy.JPG.JPG" />
+    <Content Include="Resim\15067-Madagascar_movie.jpg" />
+    <Content Include="Resim\16.jpg.jpg" />
+    <Content Include="Resim\1612389939164.jpg.jpg" />
+    <Content Include="Resim\176787.jpg.jpg" />
+    <Content Include="Resim\18-03-2239248-1.jpg.jpg" />
+    <Content Include="Resim\1920x20100.png" />
+    <Content Include="Resim\20171130_234156_HDR.jpg.jpg" />
+    <Content Include="Resim\2410fbb6-a30e-47b4-8fe8-603514342e84.png" />
+    <Content Include="Resim\28-02-3753173-1.jpg.jpg" />
+    <Content Include="Resim\31a66566-a8eb-4fd5-aec6-39f53404f655.jpg" />
+    <Content Include="Resim\493ed192-c5f6-4a17-ab9d-03e86676dcd7.jpg" />
+    <Content Include="Resim\58956ce4-a4f7-471d-ac3c-25dbc742aae6.jpg" />
+    <Content Include="Resim\5af0a19d-ed8f-4956-b60f-edc4c45ab800.png" />
+    <Content Include="Resim\5d658266-b575-436e-b860-76a252731c43.jpg" />
+    <Content Include="Resim\668084.jpg" />
+    <Content Include="Resim\796833.jpg" />
+    <Content Include="Resim\796841.jpg" />
+    <Content Include="Resim\796844.jpg" />
+    <Content Include="Resim\8049db02-1c54-4946-a26b-9dd51d91cb15.jpg" />
+    <Content Include="Resim\9b8837ccb5a8548ef01a8222e2a8f68b.png" />
+    <Content Include="Resim\9rQrYqD2u7k.jpg.jpg" />
+    <Content Include="Resim\a9cbd45d-269d-4558-bee9-1c5ff64f1227.png" />
+    <Content Include="Resim\ads.png.png" />
+    <Content Include="Resim\adssdssds %281%29.png.png" />
+    <Content Include="Resim\adssdssds.png.png" />
+    <Content Include="Resim\advertising-agency-e1586694068452.jpg.jpg" />
+    <Content Include="Resim\Aydo.png" />
+    <Content Include="Resim\Aydogandental.png" />
+    <Content Include="Resim\buycarisoprodol_jpg_90x90_crop_q85.jpg" />
+    <Content Include="Resim\cd29b4d1-8178-4648-80aa-edc02a1e4d67.png" />
+    <Content Include="Resim\client1-90x90.jpg" />
+    <Content Include="Resim\csharplogo.jpg" />
+    <Content Include="Resim\D984XivXkAA1pgW.jpg.jpg" />
+    <Content Include="Resim\ecommerce.jpg.jpg" />
+    <Content Include="Resim\eedit.jpg.jpg" />
+    <Content Include="Resim\ETicaret80X80.png.png" />
+    <Content Include="Resim\fe1f671f-3a6d-4f08-8157-0b8c9d8f9720.jpg" />
+    <Content Include="Resim\formkirp.png" />
+    <Content Include="Resim\garanti-web-yazilim-1.jpg.jpg" />
+    <Content Include="Resim\git.png" />
+    <Content Include="Resim\grafik.jpg.jpg" />
+    <Content Include="Resim\grafikTasarim80X80.png.png" />
+    <Content Include="Resim\guga.jpg.jpg" />
+    <Content Include="Resim\guner 2100.png" />
+    <Content Include="Resim\High_resolution_wallpaper_background_ID_77700291753.jpg.jpg" />
+    <Content Include="Resim\iiii.jpg.jpg" />
+    <Content Include="Resim\iStock-494345930.jpg.jpg" />
+    <Content Include="Resim\main2kirp.png" />
+    <Content Include="Resim\mainkirp.png" />
+    <Content Include="Resim\mekan.jpg.jpg" />
+    <Content Include="Resim\mekan_270x330.jpg.jpg" />
+    <Content Include="Resim\mimarlikkırpm.png" />
+    <Content Include="Resim\mm.jpg.jpg" />
+    <Content Include="Resim\mobile-app80X80.png.png" />
+    <Content Include="Resim\Mobile-Header.png.png" />
+    <Content Include="Resim\mobilMain.jpg.jpg" />
+    <Content Include="Resim\pexels-canva-studio-3194518.jpg.jpg" />
+    <Content Include="Resim\pexels-ivan-bertolazzi-2681319.jpg.jpg" />
+    <Content Include="Resim\pexels-josh-sorenson-1714208.jpg.jpg" />
+    <Content Include="Resim\pexels-pixabay-147413.jpg.jpg" />
+    <Content Include="Resim\pexels-pixabay-270348.jpg.jpg" />
+    <Content Include="Resim\pexels-pixabay-270637.jpg.jpg" />
+    <Content Include="Resim\pexels-pixabay-60504 %282%29.jpg.jpg" />
+    <Content Include="Resim\pexels-pixabay-60504.jpg.jpg" />
+    <Content Include="Resim\pexels-tranmautritam-326502.jpg.jpg" />
+    <Content Include="Resim\pexels-tranmautritam-69432.jpg.jpg" />
+    <Content Include="Resim\pexels-vojtech-okenka-392018.jpg.jpg" />
+    <Content Include="Resim\profil.jpg" />
+    <Content Include="Resim\seo80X80.png.png" />
+    <Content Include="Resim\seoicon.jpg.jpg" />
+    <Content Include="Resim\serkan 1700.png" />
+    <Content Include="Resim\serkan 2000.png" />
+    <Content Include="Resim\serkan 2100.png" />
+    <Content Include="Resim\serkan guner 1500px.png" />
+    <Content Include="Resim\sevinc ilac 2100.png" />
+    <Content Include="Resim\site-ham-13.jpg.jpg" />
+    <Content Include="Resim\sitebakım.jpg.jpg" />
+    <Content Include="Resim\social-media 80X80.png.png" />
+    <Content Include="Resim\sosyalmedya.jpeg.jpeg" />
+    <Content Include="Resim\SosyalmedyaAnaresim.jpeg.jpeg" />
+    <Content Include="Resim\testimonial_0128.jpg" />
+    <Content Include="Resim\Vue-Router.png" />
+    <Content Include="Resim\vue1.jpeg" />
+    <Content Include="Resim\web yazılım icon.jpg.jpg" />
+    <Content Include="Resim\web-90x90.jpg.jpg" />
+    <Content Include="Resim\Webigem Admin.png" />
+    <Content Include="Resim\webigemm.png" />
+    <Content Include="Resim\websitebakimi.png.png" />
+    <Content Include="Resim\websitebakimi80X80.png.png" />
+    <Content Include="Resim\webTasarim80X80.png.png" />
+    <Content Include="Resim\webyazilim.jpeg" />
+    <Content Include="Resim\webyazilim.jpeg.jpeg" />
+    <Content Include="Resim\WebYazilim80X80.png.png" />
+    <Content Include="Resim\wesigo2100.png" />
+    <Content Include="Resim\WhoopNow kirp.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Alert\package\CHANGELOG.md" />
@@ -539,7 +639,9 @@
     <Content Include="Content\WebigemDesign\main\default\assets\fonts\Flaticon.woff" />
     <Content Include="Content\WebigemDesign\main\default\assets\fonts\Flaticon.woff2" />
     <Content Include="Content\WebigemDesign\main\default\assets\fonts\Flaticond41d.eot" />
+    <Content Include="Resim\i.webp.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\FormGonderValidation\FormValidation.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -655,7 +757,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Resim\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -707,9 +808,9 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
